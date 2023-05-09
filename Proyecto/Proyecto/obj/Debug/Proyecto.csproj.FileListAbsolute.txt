@@ -1,0 +1,16 @@
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.AssemblyReference.cache
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.SuggestedBindingRedirects.cache
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.CoreCompileInputs.cache
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+E:\Drivers\VisualStudio\source\repos\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.AssemblyReference.cache
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.SuggestedBindingRedirects.cache
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.CoreCompileInputs.cache
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\idana\Documents\c#\Proyecto\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
