@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\idana\\Documents\\c#\\Proyecto\\Proyectov3.csproj",
+      "projectUniqueName": "C:\\Users\\idana\\Documents\\GitHub\\tecnicaturaProyectoCSharp\\Proyecto\\Proyectov3.csproj",
       "projectName": "Proyectov3",
-      "projectPath": "C:\\Users\\idana\\Documents\\c#\\Proyecto\\Proyectov3.csproj",
+      "projectPath": "C:\\Users\\idana\\Documents\\GitHub\\tecnicaturaProyectoCSharp\\Proyecto\\Proyectov3.csproj",
       "packagesPath": "C:\\Users\\idana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\idana\\Documents\\c#\\Proyecto\\obj\\",
+      "outputPath": "C:\\Users\\idana\\Documents\\GitHub\\tecnicaturaProyectoCSharp\\Proyecto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\idana\\AppData\\Roaming\\NuGet\\NuGet.Config",
