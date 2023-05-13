@@ -18,6 +18,7 @@ namespace Proyecto
     // 5. Mostrar el Tesla mas nuevo.
 
     //Entregar el proyecto en un archivo .ZIP o .RAR y el nombre del mismo debe tener los apellidos de los integrantes (Ej: APELLIDO1_APELLIDO2.ZIP).
+
     class Program
     {
         static void Main(string[] args)
@@ -36,7 +37,6 @@ namespace Proyecto
 
             menuPrincipal();
 
-
             void menuPrincipal()
             {
                 Console.WriteLine("------------------------------------------------");
@@ -49,30 +49,45 @@ namespace Proyecto
                 Console.WriteLine("* Mostrar tesla mas nuevo: 5");
                 Console.WriteLine("* Fin del programa: 6");
 
-                int num = int.Parse(Console.ReadLine());
-                switch (num)
-                {
-                    case 1:
-                        altaTesla();
-                        break;
-                    case 2:
-                        eliminarTesla();
-                        break;
-                    case 3:
-                        listadoConServ();
-                        break;
-                    case 4:
-                        listadoPorAnio();
-                        break;
-                    case 5:
-                        teslaMasNuevo();
-                        break;
-                    case 6:
-                        fin();
-                        break;
-                }
-            }
+                var numero = Console.ReadLine();
 
+                try
+                {
+                    int num = int.Parse(numero);
+                    switch (num)
+                    {
+                        case 1:
+                            altaTesla();
+                            break;
+                        case 2:
+                            eliminarTesla();
+                            break;
+                        case 3:
+                            listadoConServ();
+                            break;
+                        case 4:
+                            listadoPorAnio();
+                            break;
+                        case 5:
+                            teslaMasNuevo();
+                            break;
+                        case 6:
+                            fin();
+                            break;
+                        default:
+                            Console.WriteLine("Debe ingresar un número del 1 al 6");
+                            menuPrincipal();
+                            break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Debe ingresar un número valido");
+                    menuPrincipal();
+                }
+
+            }
+           
             void altaTesla()
             {
                 Console.WriteLine("------------------------------------------------");
@@ -81,7 +96,7 @@ namespace Proyecto
 
                 Console.WriteLine("¿Cuántos autos deseas crear? (máximo de 5 autos)");
                 int cant = int.Parse(Console.ReadLine());
-                if ((misTeslas.Count + cant) >= 5)
+                if ((misTeslas.Count + cant) > 5)
                 {
                     Console.WriteLine("No se pueden crear más de 5 autos");
                     Console.WriteLine("Desea borrar la lista actual? si/no");
@@ -137,15 +152,46 @@ namespace Proyecto
 
                         // Año
                         Console.WriteLine("Año: ");
-                        anio = int.Parse(Console.ReadLine());
+
+                        try
+                        {
+                            anio = int.Parse(Console.ReadLine());
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Año invalido");
+                            anio = int.Parse(Console.ReadLine());
+                        }
 
                         // Kilometraje actual
                         Console.WriteLine("Km actuales: (Ingrese números naturales)");
-                        kmActuales = int.Parse(Console.ReadLine());
+                        try
+                        {
+                            kmActuales = int.Parse(Console.ReadLine());
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Km invalidos");
+                            kmActuales = int.Parse(Console.ReadLine());
+                        }
 
                         // Kilometraje service
                         Console.WriteLine("Km service: (Ingrese números naturales)");
-                        kmService = int.Parse(Console.ReadLine());
+                        try
+                        {
+                            kmService = int.Parse(Console.ReadLine());
+                            while (kmService > kmActuales || kmService is string)
+                            {
+                                Console.WriteLine("El kilometraje del service no puede ser mayor al kilometraje actual");
+                                Console.WriteLine("Ingrese el kilometraje del service nuevamente");
+                                kmService = int.Parse(Console.ReadLine());
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Km invalidos");
+                            break;
+                        }
 
                         // Service hecho
                         if (kmService != 0)
@@ -233,125 +279,132 @@ namespace Proyecto
                     }
                     listadoTeslas();
                 }
-                menuPrincipal();
 
             }
 
             void listadoTeslas()
             {
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("---------------Listado de Teslas----------------");
-                Console.WriteLine("------------------------------------------------");
-
-                for (int i = 0; i < misTeslas.Count; i++)
+                if (misTeslas.Count > 0)
                 {
-                    for (int j = 0; j < misTeslas[i].Count; j++)
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("---------------Listado de Teslas----------------");
+                    Console.WriteLine("------------------------------------------------");
+
+                    for (int i = 0; i < misTeslas.Count; i++)
                     {
-                        Console.WriteLine(misTeslas[i][j]);
+                        for (int j = 0; j < misTeslas[i].Count; j++)
+                        {
+                            Console.WriteLine(misTeslas[i][j]);
+                        }
+                        Console.WriteLine("");
                     }
-                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("No hay Teslas para mostrar");
                 }
                 menuPrincipal();
             }
 
             void eliminarTesla()
             {
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("------------2.Eliminar un Tesla-----------------");
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("Ingrese el índice del Tesla que desea eliminar: ");
-
-                for (int i = 0; i < misTeslas.Count; i++)
+                if (misTeslas.Count > 0)
                 {
-                    Console.WriteLine($"Indice {misTeslas[i][0]}: Auto de {misTeslas[i][7]}");
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("------------2.Eliminar un Tesla-----------------");
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("Ingrese el índice del Tesla que desea eliminar: ");
+                    for (int i = 0; i < misTeslas.Count; i++)
+                    {
+                        Console.WriteLine($"Indice {misTeslas[i][0]}: Auto de {misTeslas[i][7]}");
+                    }
+                    int indice = int.Parse(Console.ReadLine());
+                    misTeslas.RemoveAt(indice);
+                    listadoTeslas();
                 }
-
-                int indice = int.Parse(Console.ReadLine());
-                misTeslas.RemoveAt(indice);
-                listadoTeslas();
+                else
+                {
+                    Console.WriteLine("No hay Teslas para eliminar");
+                }
                 menuPrincipal();
-
             }
 
             void listadoConServ()
             {
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("----3.Listado de Teslas con service hecho-------");
-                Console.WriteLine("------------------------------------------------");
-
-                // Separo los teslas con service hecho - Anda
-                for (int i = 0; i < misTeslas.Count; i++)
+                if (misTeslas.Count > 0)
                 {
-                    for (int j = 0; j < misTeslas[i].Count; j++)
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("----3.Listado de Teslas con service hecho-------");
+                    Console.WriteLine("------------------------------------------------");
+
+                    for (int i = 0; i < misTeslas.Count; i++)
                     {
-                        if (misTeslas[i][j] is true)
+                        for (int j = 0; j < misTeslas[i].Count; j++)
                         {
-                            teslasConService.Add(misTeslas[i]);
+                            if (misTeslas[i][j] is true)
+                            {
+                                teslasConService.Add(misTeslas[i]);
+                            }
                         }
 
                     }
+                    Console.WriteLine("Teslas con service:");
                     Console.WriteLine("");
-                }
-
-
-                // Recorremos la lista de listas - Anda
-
-                Console.WriteLine("Teslas con service:");
-                Console.WriteLine("");
-
-                for (int i = 0; i < teslasConService.Count; i++)
-                {
-                    for (int j = 0; j < teslasConService[i].Count; j++)
+                    for (int i = 0; i < teslasConService.Count; i++)
                     {
-                        Console.WriteLine(teslasConService[i][j]);
-
+                        for (int j = 0; j < teslasConService[i].Count; j++)
+                        {
+                            Console.WriteLine(teslasConService[i][j]);
+                        }
+                        Console.WriteLine("");
                     }
-                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("No hay Teslas con service hecho");
                 }
                 menuPrincipal();
             }
 
             void listadoPorAnio()
             {
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("------4.Listado de Teslas ordenados por año-----");
-                Console.WriteLine("------------------------------------------------");
-
-                // Ordenar los autos por año - Anda
-
                 var teslasOrdenados = misTeslas.OrderByDescending(x => x[2]).ToList();
-
-                Console.WriteLine("Lista de Teslas Ordenados");
-
-                for (int i = 0; i < teslasOrdenados.Count; i++)
+                if (teslasOrdenados.Count > 0)
                 {
-                    for (int j = 0; j < teslasOrdenados[i].Count; j++)
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("------4.Listado de Teslas ordenados por año-----");
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("Lista de Teslas Ordenados");
+                    for (int i = 0; i < teslasOrdenados.Count; i++)
                     {
-                        Console.WriteLine(teslasOrdenados[i][j]);
+                        for (int j = 0; j < teslasOrdenados[i].Count; j++)
+                        {
+                            Console.WriteLine(teslasOrdenados[i][j]);
+                        }
+                        Console.WriteLine("");
                     }
-                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("El listado de Teslas esta vacio");
                 }
                 menuPrincipal();
-
             }
 
             void teslaMasNuevo()
             {
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("----------------5.Tesla mas nuevo---------------");
-                Console.WriteLine("------------------------------------------------");
-
-                var teslasOrdenados = misTeslas.OrderByDescending(x => x[2]).ToList();
                 // Tesla mas nuevo
+                var teslasOrdenados = misTeslas.OrderByDescending(x => x[2]).ToList();
                 if (teslasOrdenados.Count > 0)
                 {
-
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("----------------5.Tesla mas nuevo---------------");
+                    Console.WriteLine("------------------------------------------------");
                     Console.WriteLine($"El tesla mas nuevo es modelo {teslasOrdenados[0][1]}, del año {teslasOrdenados[0][2]} y su dueño es {teslasOrdenados[0][7]}");
                 }
                 else
                 {
                     Console.WriteLine($"El listado de Teslas esta vacio");
-
                 }
                 menuPrincipal();
 
@@ -362,7 +415,6 @@ namespace Proyecto
                 Console.WriteLine("------------------------------------------------");
                 Console.WriteLine("----------------Fin del programa.----------------");
                 Console.WriteLine("------------------------------------------------");
-                Console.ReadLine();
 
             }
         }
