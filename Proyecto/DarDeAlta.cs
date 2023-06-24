@@ -24,7 +24,7 @@ namespace Proyecto_2_Tema_2
         {
             ComboBox modelo = (ComboBox)sender;
 
-            // Obtener el índice seleccionado
+            // Obtener el índice seleccionado del combobox
             int indiceSeleccionado = modelo.SelectedIndex;
 
             // Validar si el índice seleccionado es 0 (la primera opción vacía)
@@ -320,22 +320,38 @@ namespace Proyecto_2_Tema_2
 
         private void btnAltaTesla_Click(object sender, EventArgs e)
         {
+            int anio;
+            double kilometrajeActual;
+            string color;
+            double autonomiaActual;
+            int cargas;
+            PersonaFisica duenioTesla;
+            PersonaJuridica duenioSpaceX;
+
             switch (cmbTipoVehiculo.SelectedItem)
             {
+
                 case "Tesla":
                     switch (cmbModeloTesla.SelectedItem)
                     {
+
                         case "ModeloX":
 
-                            int anio = (int)numericAnio.Value;
-                            double kilometrajeActual = (double)numericKilometrajeActual.Value;
-                            string color = (string)cmbColorTesla.Text;
-                            double autonomiaActual = (double)numericAutonomiaActual.Value;
-                            int cargas = (int)numericCargasRealizadas.Value;
-                            PersonaFisica duenio = (PersonaFisica)cmbDuenioTesla.SelectedItem;
+                            anio = (int)numericAnio.Value;
+                            kilometrajeActual = (double)numericKilometrajeActual.Value;
+                            color = (string)cmbColorTesla.Text;
+                            autonomiaActual = (double)numericAutonomiaActual.Value;
+                            cargas = (int)numericCargasRealizadas.Value;
+                            duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
-                            ModeloX nuevoTesla = new ModeloX(anio, kilometrajeActual, color, autonomiaActual, cargas, duenio);
+                            ModeloX nuevoTesla = new ModeloX(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioTesla);
                             MessageBox.Show("Exito!", "Nuevo cliente creado", MessageBoxButtons.OK);
+
+                            break;
+
+                        case "ModeloS":
+                            
+
 
                             break;
 
