@@ -56,18 +56,21 @@
             this.GbFiltro.Controls.Add(this.CbTesla);
             this.GbFiltro.Controls.Add(this.GbEmpresa);
             this.GbFiltro.Controls.Add(this.Indicaciones);
-            this.GbFiltro.Location = new System.Drawing.Point(12, 12);
+            this.GbFiltro.Location = new System.Drawing.Point(16, 15);
+            this.GbFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GbFiltro.Name = "GbFiltro";
-            this.GbFiltro.Size = new System.Drawing.Size(278, 528);
+            this.GbFiltro.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbFiltro.Size = new System.Drawing.Size(371, 650);
             this.GbFiltro.TabIndex = 2;
             this.GbFiltro.TabStop = false;
             this.GbFiltro.Text = "Filtro";
             // 
             // BtnActualizar
             // 
-            this.BtnActualizar.Location = new System.Drawing.Point(6, 210);
+            this.BtnActualizar.Location = new System.Drawing.Point(8, 258);
+            this.BtnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(246, 23);
+            this.BtnActualizar.Size = new System.Drawing.Size(328, 28);
             this.BtnActualizar.TabIndex = 10;
             this.BtnActualizar.Text = "Actualizar Lista";
             this.BtnActualizar.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // 
             // TbDuenio
             // 
-            this.TbDuenio.Location = new System.Drawing.Point(131, 127);
+            this.TbDuenio.Location = new System.Drawing.Point(175, 156);
+            this.TbDuenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbDuenio.Name = "TbDuenio";
-            this.TbDuenio.Size = new System.Drawing.Size(121, 20);
+            this.TbDuenio.Size = new System.Drawing.Size(160, 22);
             this.TbDuenio.TabIndex = 9;
             // 
             // CbSpaceX
@@ -86,27 +90,30 @@
             this.CbSpaceX.Items.AddRange(new object[] {
             "Starship",
             "Falcon 9"});
-            this.CbSpaceX.Location = new System.Drawing.Point(131, 170);
+            this.CbSpaceX.Location = new System.Drawing.Point(175, 209);
+            this.CbSpaceX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbSpaceX.Name = "CbSpaceX";
-            this.CbSpaceX.Size = new System.Drawing.Size(121, 21);
+            this.CbSpaceX.Size = new System.Drawing.Size(160, 24);
             this.CbSpaceX.TabIndex = 8;
             this.CbSpaceX.Visible = false;
             // 
             // LModelo
             // 
             this.LModelo.AutoSize = true;
-            this.LModelo.Location = new System.Drawing.Point(42, 173);
+            this.LModelo.Location = new System.Drawing.Point(56, 213);
+            this.LModelo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LModelo.Name = "LModelo";
-            this.LModelo.Size = new System.Drawing.Size(42, 13);
+            this.LModelo.Size = new System.Drawing.Size(53, 16);
             this.LModelo.TabIndex = 6;
             this.LModelo.Text = "Modelo";
             // 
             // LDuenio
             // 
             this.LDuenio.AutoSize = true;
-            this.LDuenio.Location = new System.Drawing.Point(16, 127);
+            this.LDuenio.Location = new System.Drawing.Point(21, 156);
+            this.LDuenio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDuenio.Name = "LDuenio";
-            this.LDuenio.Size = new System.Drawing.Size(96, 13);
+            this.LDuenio.Size = new System.Drawing.Size(121, 16);
             this.LDuenio.TabIndex = 5;
             this.LDuenio.Text = "Nombre del Dueño";
             // 
@@ -117,18 +124,21 @@
             "Modelo X",
             "Modelo S",
             "Cybertruck"});
-            this.CbTesla.Location = new System.Drawing.Point(131, 170);
+            this.CbTesla.Location = new System.Drawing.Point(175, 209);
+            this.CbTesla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbTesla.Name = "CbTesla";
-            this.CbTesla.Size = new System.Drawing.Size(121, 21);
+            this.CbTesla.Size = new System.Drawing.Size(160, 24);
             this.CbTesla.TabIndex = 4;
             // 
             // GbEmpresa
             // 
             this.GbEmpresa.Controls.Add(this.RbSpaceX);
             this.GbEmpresa.Controls.Add(this.RbTesla);
-            this.GbEmpresa.Location = new System.Drawing.Point(6, 46);
+            this.GbEmpresa.Location = new System.Drawing.Point(8, 57);
+            this.GbEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GbEmpresa.Name = "GbEmpresa";
-            this.GbEmpresa.Size = new System.Drawing.Size(262, 56);
+            this.GbEmpresa.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbEmpresa.Size = new System.Drawing.Size(349, 69);
             this.GbEmpresa.TabIndex = 3;
             this.GbEmpresa.TabStop = false;
             this.GbEmpresa.Text = "A que empresa pertenece el vehículo a eliminar?";
@@ -136,9 +146,10 @@
             // RbSpaceX
             // 
             this.RbSpaceX.AutoSize = true;
-            this.RbSpaceX.Location = new System.Drawing.Point(154, 28);
+            this.RbSpaceX.Location = new System.Drawing.Point(205, 34);
+            this.RbSpaceX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RbSpaceX.Name = "RbSpaceX";
-            this.RbSpaceX.Size = new System.Drawing.Size(63, 17);
+            this.RbSpaceX.Size = new System.Drawing.Size(76, 20);
             this.RbSpaceX.TabIndex = 2;
             this.RbSpaceX.Text = "SpaceX";
             this.RbSpaceX.UseVisualStyleBackColor = true;
@@ -148,9 +159,10 @@
             // 
             this.RbTesla.AutoSize = true;
             this.RbTesla.Checked = true;
-            this.RbTesla.Location = new System.Drawing.Point(29, 28);
+            this.RbTesla.Location = new System.Drawing.Point(39, 34);
+            this.RbTesla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RbTesla.Name = "RbTesla";
-            this.RbTesla.Size = new System.Drawing.Size(51, 17);
+            this.RbTesla.Size = new System.Drawing.Size(63, 20);
             this.RbTesla.TabIndex = 1;
             this.RbTesla.TabStop = true;
             this.RbTesla.Text = "Tesla";
@@ -160,9 +172,10 @@
             // Indicaciones
             // 
             this.Indicaciones.AutoSize = true;
-            this.Indicaciones.Location = new System.Drawing.Point(3, 16);
+            this.Indicaciones.Location = new System.Drawing.Point(4, 20);
+            this.Indicaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Indicaciones.Name = "Indicaciones";
-            this.Indicaciones.Size = new System.Drawing.Size(265, 13);
+            this.Indicaciones.Size = new System.Drawing.Size(331, 16);
             this.Indicaciones.TabIndex = 0;
             this.Indicaciones.Text = "Ingrese la información correspondiente a continuación:";
             // 
@@ -173,25 +186,32 @@
             this.DgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvTabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EliminarVehiculo});
-            this.DgvTabla.Location = new System.Drawing.Point(297, 12);
+            this.DgvTabla.Location = new System.Drawing.Point(396, 15);
+            this.DgvTabla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DgvTabla.Name = "DgvTabla";
-            this.DgvTabla.Size = new System.Drawing.Size(1032, 528);
+            this.DgvTabla.RowHeadersWidth = 51;
+            this.DgvTabla.Size = new System.Drawing.Size(1376, 650);
             this.DgvTabla.TabIndex = 3;
             this.DgvTabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTabla_CellContentClick);
             // 
             // EliminarVehiculo
             // 
             this.EliminarVehiculo.HeaderText = "Eliminar";
+            this.EliminarVehiculo.MinimumWidth = 6;
             this.EliminarVehiculo.Name = "EliminarVehiculo";
             this.EliminarVehiculo.Text = "Borrar";
+            this.EliminarVehiculo.Width = 125;
             // 
             // Eliminar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 556);
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ClientSize = new System.Drawing.Size(1812, 684);
             this.Controls.Add(this.DgvTabla);
             this.Controls.Add(this.GbFiltro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Eliminar";
             this.Text = "Eliminar";
             this.Load += new System.EventHandler(this.Eliminar_Load);
