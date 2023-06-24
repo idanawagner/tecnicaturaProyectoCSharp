@@ -340,6 +340,15 @@ namespace Proyecto_2_Tema_2
                             break;
 
                         //Continuar con swich del resto de modelos de Tesla
+
+                        case "ModeloY":
+
+
+                            break;
+
+
+
+
                     }
 
                     ///
