@@ -33,6 +33,8 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas
 
         public int Id { get => _id; }
         public int Asientos { get => _asientos; set => _asientos = value; }
+        public PersonaFisica Duenio { get => _duenio; internal set => _duenio = value; }
+
 
         public static List<Tesla> ListaTeslas()
         {

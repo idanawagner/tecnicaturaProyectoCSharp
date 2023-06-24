@@ -64,3 +64,18 @@ E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\
 E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Juli\Proyecto 2 Tema 2\Proyecto 2 Tema 2\Proyecto 2 Tema 2\Proyecto 2 Tema 2\obj\Debug\Proyecto 2 Tema 2.csproj.CoreCompileInputs.cache
 E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Juli\Proyecto 2 Tema 2\Proyecto 2 Tema 2\Proyecto 2 Tema 2\Proyecto 2 Tema 2\obj\Debug\Proyecto 2 Tema 2.exe
 E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Juli\Proyecto 2 Tema 2\Proyecto 2 Tema 2\Proyecto 2 Tema 2\Proyecto 2 Tema 2\obj\Debug\Proyecto 2 Tema 2.pdb
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.AssemblyReference.cache
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.SuggestedBindingRedirects.cache
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.DarDeAlta.resources
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.Eliminar.resources
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.MainForm.resources
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.MostrarMasNuevo.resources
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.Properties.Resources.resources
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.VerCombustibleYBateria.resources
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.GenerateResource.cache
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.CoreCompileInputs.cache
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.exe
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.pdb
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\bin\Debug\Proyecto 2 Tema 2.exe.config
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\bin\Debug\Proyecto 2 Tema 2.exe
+C:\Users\idana\Documents\GitHub\tecnicaturaProyectoCSharp\Proyecto\bin\Debug\Proyecto 2 Tema 2.pdb
