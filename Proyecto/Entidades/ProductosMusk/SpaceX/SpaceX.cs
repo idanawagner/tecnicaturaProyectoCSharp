@@ -15,15 +15,13 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
         private int _id;
         private PersonaJuridica _duenio;
 
-        public SpaceX(int anio, double usoActual, string color, double autonomia, double autonomiaActual, int cargas, double frecuenciaService, PersonaJuridica duenio)
-            : base(anio, usoActual, color, autonomia, autonomiaActual, cargas, frecuenciaService)
+        public SpaceX(int anio, double usoActual, string color, double autonomiaActual, int cargas, PersonaJuridica duenio, double autonomia, double frecuenciaService)
+            : base(anio, usoActual, color, autonomiaActual, cargas, autonomia,  frecuenciaService)
         {
             _id = contador;
             contador++;
             _duenio = duenio;
 
-            // Le agregamos el Tesla al nuevo dueño
-            duenio.Comprar(this);
 
             // agregamos el nuevo Tesla a la lista de Teslas
             _listaSpaceX.Add(this);

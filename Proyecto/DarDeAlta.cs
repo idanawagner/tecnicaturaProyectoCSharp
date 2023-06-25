@@ -1,5 +1,6 @@
 ﻿using Proyecto_2_Tema_2.Entidades.Duenios;
 using Proyecto_2_Tema_2.Entidades.Duenios.TiposDePersonas;
+using Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX.Modelos;
 using Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas.Modelos;
 using System;
 using System.Collections.Generic;
@@ -334,6 +335,7 @@ namespace Proyecto_2_Tema_2
                 case "Tesla":
                     switch (cmbModeloTesla.SelectedItem)
                     {
+                        
 
                         case "ModeloX":
 
@@ -344,35 +346,72 @@ namespace Proyecto_2_Tema_2
                             cargas = (int)numericCargasRealizadas.Value;
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
-                            ModeloX nuevoTesla = new ModeloX(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioTesla);
-                            MessageBox.Show("Exito!", "Nuevo cliente creado", MessageBoxButtons.OK);
+                            ModeloX nuevoModeloX = new ModeloX(anio,kilometrajeActual,color,autonomiaActual,cargas,duenioTesla);
+                            MessageBox.Show("Exito!", "Nuevo ModeloX creado", MessageBoxButtons.OK);
 
                             break;
 
                         case "ModeloS":
-                            
 
+                            anio = (int)numericAnio.Value;
+                            kilometrajeActual = (double)numericKilometrajeActual.Value;
+                            color = (string)cmbColorTesla.Text;
+                            autonomiaActual = (double)numericAutonomiaActual.Value;
+                            cargas = (int)numericCargasRealizadas.Value;
+                            duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
+
+                            ModeloS nuevoModeloS = new ModeloS(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioTesla);
+                            MessageBox.Show("Exito!", "Nuevo ModeloS creado", MessageBoxButtons.OK);
 
                             break;
 
-                        //Continuar con swich del resto de modelos de Tesla
+                        case "Cybertruck":
+                            anio = (int)numericAnio.Value;
+                            kilometrajeActual = (double)numericKilometrajeActual.Value;
+                            color = (string)cmbColorTesla.Text;
+                            autonomiaActual = (double)numericAutonomiaActual.Value;
+                            cargas = (int)numericCargasRealizadas.Value;
+                            duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
-                        case "ModeloY":
+                            Cybertruck nuevoCybertruckS = new Cybertruck(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioTesla);
+                            MessageBox.Show("Exito!", "Nuevo Cybertruck creado", MessageBoxButtons.OK);
 
-
-                            break;
-
-
-
-
+                            break;                           
                     }
-
-                    ///
 
                     break;
                 case "SpaceX":
+                    switch (cmbModeloSpaceX.SelectedItem)
+                    {
+                        case "Starship":
+                            anio = (int)numericAnio.Value;
+                            kilometrajeActual = (double)numericKilometrajeActual.Value;
+                            color = (string)cmbColorTesla.Text;
+                            autonomiaActual = (double)numericAutonomiaActual.Value;
+                            cargas = (int)numericCargasRealizadas.Value;
+                            duenioSpaceX = (PersonaJuridica)cmbDuenioTesla.SelectedItem;
+
+                            Starship nuevoStarship = new Starship(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioSpaceX);
+                            MessageBox.Show("Exito!", "Nuevo Starship creado", MessageBoxButtons.OK);
+
+
+                            break;
+                        case "Falcon9":
+                            anio = (int)numericAnio.Value;
+                            kilometrajeActual = (double)numericKilometrajeActual.Value;
+                            color = (string)cmbColorTesla.Text;
+                            autonomiaActual = (double)numericAutonomiaActual.Value;
+                            cargas = (int)numericCargasRealizadas.Value;
+                            duenioSpaceX = (PersonaJuridica)cmbDuenioTesla.SelectedItem;
+
+                            Falcon9 nuevoFalcon9 = new Falcon9(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioSpaceX);
+                            MessageBox.Show("Exito!", "Nuevo Falcon9 creado", MessageBoxButtons.OK);
+                            break;
+                    }
+
+
                     break;
-                    //Continuar con resto de modelos spacex
+                    
             }
         }
 

@@ -9,8 +9,8 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX.Modelos
 {
     public class Falcon9 : SpaceX
     {
-        public Falcon9(int anio, double usoActual, string color, double autonomia, double autonomiaActual, int cargas, double frecuenciaService, PersonaJuridica duenio) 
-            : base(anio, usoActual, color, 200, autonomiaActual, cargas, 400, duenio)
+        public Falcon9(int anio, double usoActual, string color, double autonomiaActual, int cargas, PersonaJuridica duenio, double autonomia = 200, double frecuenciaService = 400)
+           : base(anio, usoActual, color, autonomiaActual, cargas, duenio, autonomia, frecuenciaService)
         {
             //No se requiere codigo adicional
         }

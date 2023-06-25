@@ -9,10 +9,10 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX.Modelos
 {
     public class Starship : SpaceX
     {
-        public Starship(int anio, double usoActual, string color, double autonomia, double autonomiaActual, int cargas, double frecuenciaService, PersonaJuridica duenio) 
-            : base(anio, usoActual, color, 500, autonomiaActual, cargas, 1000,duenio)
+        public Starship(int anio, double usoActual, string color, double autonomiaActual, int cargas, PersonaJuridica duenio, double autonomia = 500, double frecuenciaService = 1000)
+            : base(anio, usoActual, color, autonomiaActual, cargas, duenio, autonomia, frecuenciaService)
         {
-            //No requiere codigo adicional
+            //No se requiere codigo adicional
         }
 
         public override string ToString()

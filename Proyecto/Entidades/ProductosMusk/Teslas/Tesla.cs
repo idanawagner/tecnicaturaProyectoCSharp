@@ -16,8 +16,8 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas
         private PersonaFisica _duenio;
 
 
-        public Tesla(int anio, double usoActual, string color, double autonomia, double autonomiaActual, int cargas, double frecuenciaService, int asientos, PersonaFisica duenio)
-            : base(anio, usoActual, color, autonomia, autonomiaActual, cargas, frecuenciaService)
+        public Tesla(int anio, double usoActual, string color, double autonomiaActual, int cargas,PersonaFisica duenio, double autonomia, double frecuenciaService, int asientos)
+            : base(anio, usoActual, color, autonomiaActual, cargas, autonomia, frecuenciaService)
         {
             _id = contador;
             contador++;

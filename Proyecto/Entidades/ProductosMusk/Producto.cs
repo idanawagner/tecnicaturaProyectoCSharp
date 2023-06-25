@@ -21,7 +21,7 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk
 
         #region CONSTRUCTOR
 
-        public Producto(int anio, double usoActual, string color, double autonomia, double autonomiaActual, int cargas, double frecuenciaService)
+        public Producto(int anio, double usoActual, string color, double autonomiaActual, int cargas,  double autonomia, double frecuenciaService)
         {
             _productos.Add(this); 
             Anio = anio;
