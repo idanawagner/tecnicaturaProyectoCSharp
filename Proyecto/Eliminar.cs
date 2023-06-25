@@ -1,5 +1,6 @@
 ﻿using Proyecto_2_Tema_2.Entidades.Duenios.TiposDePersonas;
 using Proyecto_2_Tema_2.Entidades.ProductosMusk;
+using Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX;
 using Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace Proyecto_2_Tema_2
         {
             CbSpaceX.Visible = true;
             CbTesla.Visible = false;
-            //DgvTabla.DataSource = SpaceX.ListaSpaceX();                                 // <-------------------------------- Agregar lista SpaceX
+            DgvTabla.DataSource = SpaceX.ListaSpaceX();                                 // <-------------------------------- Agregar lista SpaceX
         }
 
         // Evento del botón Actualizar
@@ -60,14 +61,14 @@ namespace Proyecto_2_Tema_2
             }
             else if (RbSpaceX.Checked)
             {
-                //if (SpaceX.ListaSpaceX().Count == 0)
-                //{
-                //    MessageBox.Show("La lista de clientes está vacía.", "Error", MessageBoxButtons.OK);
-                //}
-                //else
-                //{
-                //    DgvTabla.DataSource = SpaceX.ListaSpaceX();
-                //}
+                if (SpaceX.ListaSpaceX().Count == 0)
+                {
+                    MessageBox.Show("La lista de clientes está vacía.", "Error", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    DgvTabla.DataSource = SpaceX.ListaSpaceX();
+                }
             }
         }
 
@@ -77,14 +78,34 @@ namespace Proyecto_2_Tema_2
         {
             if (e.RowIndex >= 0)
             {
+
+                
                 DataGridViewRow row = DgvTabla.Rows[e.RowIndex];
-                Tesla tesla = (Tesla)row.DataBoundItem;
-                Producto producto = (Producto)row.DataBoundItem;
-                Tesla.RemoveTesla(tesla);
-                Producto.RemoveProducto(tesla);
-                //SpaceX.RemoveSpaceX(tesla);
-                DgvTabla.DataSource = null;
-                DgvTabla.DataSource = Tesla.ListaTeslas();
+
+                try
+                {
+                    Tesla tesla = (Tesla)row.DataBoundItem;
+                    Tesla.RemoveTesla(tesla);
+                    Producto.RemoveProducto(tesla);
+
+                }
+
+                catch 
+                {
+                    SpaceX spacex = (SpaceX)row.DataBoundItem;
+                    SpaceX.RemoveSpaceX(spacex);
+
+                }
+
+
+                //Tesla tesla = (Tesla)row.DataBoundItem;
+                //SpaceX spacex = (SpaceX)row.DataBoundItem;
+                //Producto producto = (Producto)row.DataBoundItem;
+                //Tesla.RemoveTesla(tesla);
+                //Producto.RemoveProducto(producto);
+                //SpaceX.RemoveSpaceX(spacex);
+                //DgvTabla.DataSource = null;
+                //DgvTabla.DataSource = Tesla.ListaTeslas();
             }
         }
     }

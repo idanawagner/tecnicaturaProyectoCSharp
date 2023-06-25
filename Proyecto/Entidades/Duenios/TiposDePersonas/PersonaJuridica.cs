@@ -11,7 +11,7 @@ namespace Proyecto_2_Tema_2.Entidades.Duenios.TiposDePersonas
     public class PersonaJuridica : Persona
     {
         private static List<PersonaJuridica> _listaPersonasJuridicas = new List<PersonaJuridica>();
-        private static List<SpaceX> _listaSpaceX = new List<SpaceX>();
+        private static List<SpaceX> _listaNaves = new List<SpaceX>();
 
         public PersonaJuridica(string nombre, int id)
         : base(nombre, id)
@@ -21,7 +21,7 @@ namespace Proyecto_2_Tema_2.Entidades.Duenios.TiposDePersonas
 
         public void Comprar(SpaceX nave)
         {
-            _listaSpaceX.Add(nave);
+            _listaNaves.Add(nave);
         }
 
         public static List<PersonaJuridica> ListaPersonasJuridicas()
@@ -29,9 +29,9 @@ namespace Proyecto_2_Tema_2.Entidades.Duenios.TiposDePersonas
             return _listaPersonasJuridicas;
         }
 
-        public List<SpaceX> ListaSpaceX()
+        public List<SpaceX> ListaNaves()
         {
-            return _listaSpaceX;
+            return _listaNaves;
         }
 
 

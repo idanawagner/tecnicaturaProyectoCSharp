@@ -9,8 +9,9 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas.Modelos
 {
     public class ModeloX : Tesla
     {
-        public ModeloX(int anio, double usoActual, string color, double autonomiaActual, int cargas, PersonaFisica duenio)
-            : base(anio, usoActual, color, 560, autonomiaActual, cargas, 1000, 7, duenio)
+       
+        public ModeloX(int anio, double usoActual, string color,  double autonomiaActual, int cargas, PersonaFisica duenio, double autonomia = 560, double frecuenciaService = 1000, int asientos = 7)
+            : base(anio, usoActual, color, autonomiaActual, cargas, duenio, autonomia, frecuenciaService, asientos)
         {
             // No se requiere código adicional en el constructor
         }
