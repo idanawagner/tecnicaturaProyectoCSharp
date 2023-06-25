@@ -48,7 +48,7 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas
 
         public string RealizarService()
         {
-            double kilometraje = this.UsoActual; // Obtener el kilometraje actual del Tesla
+           double kilometraje = this.UsoActual; // Obtener el kilometraje actual del Tesla
 
             double serviceRealizados = Math.Floor(kilometraje / this.FrecuenciaService); // Calcular la cantidad de services realizados
 
@@ -56,42 +56,40 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas
 
             for (int i = 1; i <= serviceRealizados; i++)
             {
-                int kilometrajeService = i * 1000; // Kilometraje del service actual.
+                int kilometrajeService = i * (int)this.FrecuenciaService; // Kilometraje del service actual.
 
-                // Agregar escaneos según el kilometraje del servicio actual
-                if (kilometrajeService <= kilometraje)
+                
+                StringBuilder reporteServiceParcial = new StringBuilder(); // Reporte parcial de cada service
+                reporteServiceParcial.AppendLine($"Service {i}:");
+
+                if (kilometrajeService % 1000 == 0)
                 {
-                    StringBuilder reporteServiceParcial = new StringBuilder(); // Reporte parcial de cada service
-                    reporteServiceParcial.AppendLine($"Service {i}:");
-
-                    if (kilometrajeService % 1000 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
-                    }
-
-                    if (kilometrajeService % 2000 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de batería");
-                    }
-
-                    if (kilometrajeService % 2500 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de sistema de navegación");
-                    }
-
-                    if (kilometrajeService % 3000 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de sistema de tracción");
-                        reporteServiceParcial.AppendLine("Revisión de motor");
-                    }
-
-                    reporteService.AppendLine(reporteServiceParcial.ToString());
+                    reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
                 }
+
+                if (kilometrajeService % 2000 == 0 )
+                {
+                    reporteServiceParcial.AppendLine("Revisión de batería");
+                }
+
+                if (kilometrajeService % 2500 == 0)
+                {
+                    reporteServiceParcial.AppendLine("Revisión de sistema de navegación");
+                }
+
+                if (kilometrajeService % 3000 == 0 )
+                {
+                    reporteServiceParcial.AppendLine("Revisión de sistema de tracción");
+                    reporteServiceParcial.AppendLine("Revisión de motor");
+                }
+
+                reporteService.AppendLine(reporteServiceParcial.ToString());
+                
             }
 
             return reporteService.ToString();
         }
 
-
+ 
     }
 }

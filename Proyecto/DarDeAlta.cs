@@ -67,6 +67,9 @@ namespace Proyecto_2_Tema_2
             cmbDuenioTesla.Items.Clear();
             cmbDuenioSpaceX.DataSource = null;
             cmbDuenioSpaceX.Visible=false;
+            cmbColor.SelectedIndex = 0;
+
+
             ComboBox modelo = (ComboBox)sender;
 
             // Obtener el índice seleccionado
@@ -81,7 +84,9 @@ namespace Proyecto_2_Tema_2
                 cmbModeloSpaceX.SelectedIndex = 0;
                 lblID.Text = "CUIL";
                 
-                
+
+
+
                 // grpDatosVehiculo.Visible = true;
 
             }
@@ -92,16 +97,30 @@ namespace Proyecto_2_Tema_2
                 cmbModeloTesla.Visible = false;
                 cmbModeloTesla.SelectedIndex = 0;
                 lblID.Text = "CUIT";
+                lblKilometrajeActual.Text = "Horas de vuelo actuales";
 
                 //grpDatosVehiculo.Visible = true;
             }
         }
         private void cmbModeloTesla_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbColor.SelectedIndex = 0;
             if (cmbModeloTesla.SelectedIndex != 0)
             {
                 rbtnClienteNuevo.Visible = true;
                 rbtnClienteExistente.Visible = true;
+                switch (cmbModeloTesla.SelectedIndex)
+                {
+                    case 1:
+                        numericAutonomiaActual.Maximum = 650;
+                        break;
+                    case 2:
+                        numericAutonomiaActual.Maximum = 560;
+                        break;
+                    case 3:
+                        numericAutonomiaActual.Maximum = 800;
+                        break;
+                }
             }
             else
             {
@@ -113,10 +132,20 @@ namespace Proyecto_2_Tema_2
         }
         private void cmbModeloSpaceX_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbColor.SelectedIndex = 0;
             if (cmbModeloSpaceX.SelectedIndex != 0)
             {
                 rbtnClienteNuevo.Visible = true;
                 rbtnClienteExistente.Visible = true;
+                switch (cmbModeloSpaceX.SelectedIndex)
+                {
+                    case 1:
+                        numericAutonomiaActual.Maximum = 500;
+                        break;
+                    case 2:
+                        numericAutonomiaActual.Maximum = 200;
+                        break;                    
+                }
             }
             else
             {
@@ -306,7 +335,7 @@ namespace Proyecto_2_Tema_2
             if (indiceSeleccionado == 0)
             {
                 errorProviderCmbColorTesla.SetError(color, "Debe seleccionar un color válido");               
-                //e.Cancel = true; // Cancelar el evento Validating para evitar que se pierda el foco
+                e.Cancel = true; // Cancelar el evento Validating para evitar que se pierda el foco
 
 
             }
@@ -317,12 +346,28 @@ namespace Proyecto_2_Tema_2
             }
         }
 
-        
+        private void chk0km_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk0km.Checked)
+            {
+                numericAnio.Value = 2023;
+                numericUsoActual.Value = 0;
+                numericCargasRealizadas.Value = 0;
+                numericAutonomiaActual.Value = 0;
+                cmbColor.Visible = true;
+                panelNot0Km.Visible = false;
+            }
+            else
+            {
+                panelNot0Km.Visible = true;
+                cmbColor.Visible = true;
+            }
+        }
 
-        private void btnAltaTesla_Click(object sender, EventArgs e)
+        private void btnAltaVehiculo_Click(object sender, EventArgs e)
         {
             int anio;
-            double kilometrajeActual;
+            double usoActual;
             string color;
             double autonomiaActual;
             int cargas;
@@ -340,13 +385,13 @@ namespace Proyecto_2_Tema_2
                         case "ModeloX":
 
                             anio = (int)numericAnio.Value;
-                            kilometrajeActual = (double)numericKilometrajeActual.Value;
-                            color = (string)cmbColorTesla.Text;
+                            usoActual = (double)numericUsoActual.Value;
+                            color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
-                            ModeloX nuevoModeloX = new ModeloX(anio,kilometrajeActual,color,autonomiaActual,cargas,duenioTesla);
+                            ModeloX nuevoModeloX = new ModeloX(anio,usoActual,color,autonomiaActual,cargas,duenioTesla);
                             MessageBox.Show("Exito!", "Nuevo ModeloX creado", MessageBoxButtons.OK);
 
                             break;
@@ -354,26 +399,26 @@ namespace Proyecto_2_Tema_2
                         case "ModeloS":
 
                             anio = (int)numericAnio.Value;
-                            kilometrajeActual = (double)numericKilometrajeActual.Value;
-                            color = (string)cmbColorTesla.Text;
+                            usoActual = (double)numericUsoActual.Value;
+                            color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
-                            ModeloS nuevoModeloS = new ModeloS(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioTesla);
+                            ModeloS nuevoModeloS = new ModeloS(anio, usoActual, color, autonomiaActual, cargas, duenioTesla);
                             MessageBox.Show("Exito!", "Nuevo ModeloS creado", MessageBoxButtons.OK);
 
                             break;
 
                         case "Cybertruck":
                             anio = (int)numericAnio.Value;
-                            kilometrajeActual = (double)numericKilometrajeActual.Value;
-                            color = (string)cmbColorTesla.Text;
+                            usoActual = (double)numericUsoActual.Value;
+                            color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
-                            Cybertruck nuevoCybertruckS = new Cybertruck(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioTesla);
+                            Cybertruck nuevoCybertruckS = new Cybertruck(anio, usoActual, color, autonomiaActual, cargas, duenioTesla);
                             MessageBox.Show("Exito!", "Nuevo Cybertruck creado", MessageBoxButtons.OK);
 
                             break;                           
@@ -385,26 +430,26 @@ namespace Proyecto_2_Tema_2
                     {
                         case "Starship":
                             anio = (int)numericAnio.Value;
-                            kilometrajeActual = (double)numericKilometrajeActual.Value;
-                            color = (string)cmbColorTesla.Text;
+                            usoActual = (double)numericUsoActual.Value;
+                            color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
                             duenioSpaceX = (PersonaJuridica)cmbDuenioTesla.SelectedItem;
 
-                            Starship nuevoStarship = new Starship(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioSpaceX);
+                            Starship nuevoStarship = new Starship(anio, usoActual, color, autonomiaActual, cargas, duenioSpaceX);
                             MessageBox.Show("Exito!", "Nuevo Starship creado", MessageBoxButtons.OK);
 
 
                             break;
                         case "Falcon9":
                             anio = (int)numericAnio.Value;
-                            kilometrajeActual = (double)numericKilometrajeActual.Value;
-                            color = (string)cmbColorTesla.Text;
+                            usoActual = (double)numericUsoActual.Value;
+                            color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
                             duenioSpaceX = (PersonaJuridica)cmbDuenioTesla.SelectedItem;
 
-                            Falcon9 nuevoFalcon9 = new Falcon9(anio, kilometrajeActual, color, autonomiaActual, cargas, duenioSpaceX);
+                            Falcon9 nuevoFalcon9 = new Falcon9(anio, usoActual, color, autonomiaActual, cargas, duenioSpaceX);
                             MessageBox.Show("Exito!", "Nuevo Falcon9 creado", MessageBoxButtons.OK);
                             break;
                     }
@@ -415,6 +460,32 @@ namespace Proyecto_2_Tema_2
             }
         }
 
-       
+
+        //HABLAR CON LOS CHICOS!!!!
+        //HABLAR CON LOS CHICOS!!!!
+        //HABLAR CON LOS CHICOS!!!!
+        //HABLAR CON LOS CHICOS!!!!
+        //HABLAR CON LOS CHICOS!!!!
+        //HABLAR CON LOS CHICOS!!!!
+        //HABLAR CON LOS CHICOS!!!!
+
+
+        // Dos cosas: Validacion de CUIT/CUIL y las funciones que estan abajo
+
+        private void numericAutonomiaActual_ValueChanged(object sender, EventArgs e)
+        {
+            //if (numericAutonomiaActual.Value > numericAutonomiaActual.Maximum)
+            //{
+            //    MessageBox.Show($"La autonomia maxima para el modelo es {numericAutonomiaActual.Maximum}. \n Si ingresas un valor mayor, se pondra por defecto el valor maximo.", "Autonomia mayor a la capacidad del vehiculo", MessageBoxButtons.OK);
+            //}
+        }
+
+        private void numericAutonomiaActual_Validating(object sender, CancelEventArgs e)
+        {
+            //if (numericAutonomiaActual.Value > numericAutonomiaActual.Maximum)
+            //{
+            //    MessageBox.Show($"La autonomia maxima para el modelo es {numericAutonomiaActual.Maximum}. \n Si ingresas un valor mayor, se pondra por defecto el valor maximo.","Autonomia mayor a la capacidad del vehiculo",MessageBoxButtons.OK);
+            //}
+        }
     }
 }
