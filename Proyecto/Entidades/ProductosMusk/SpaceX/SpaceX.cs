@@ -23,7 +23,7 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
             _duenio = duenio;
 
 
-            // agregamos el nuevo Tesla a la lista de Teslas
+            // agregamos el nuevo SpaceX a la lista SpaceX
             _listaSpaceX.Add(this);
         }
         public int Id { get => _id; }

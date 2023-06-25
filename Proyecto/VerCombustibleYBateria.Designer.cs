@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BActualizar = new System.Windows.Forms.Button();
-            this.DgvTabla = new System.Windows.Forms.DataGridView();
             this.GbFiltro = new System.Windows.Forms.GroupBox();
             this.CbCombustible = new System.Windows.Forms.CheckBox();
             this.CbBateria = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvTabla)).BeginInit();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DgvTabla = new System.Windows.Forms.DataGridView();
             this.GbFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // BActualizar
@@ -46,15 +49,6 @@
             this.BActualizar.Text = "Actualizar";
             this.BActualizar.UseVisualStyleBackColor = true;
             this.BActualizar.Click += new System.EventHandler(this.BActualizar_Click);
-            // 
-            // DgvTabla
-            // 
-            this.DgvTabla.BackgroundColor = System.Drawing.Color.Teal;
-            this.DgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvTabla.Location = new System.Drawing.Point(146, 12);
-            this.DgvTabla.Name = "DgvTabla";
-            this.DgvTabla.Size = new System.Drawing.Size(958, 350);
-            this.DgvTabla.TabIndex = 4;
             // 
             // GbFiltro
             // 
@@ -87,20 +81,36 @@
             this.CbBateria.Text = "Batería";
             this.CbBateria.UseVisualStyleBackColor = true;
             // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(Proyecto_2_Tema_2.Entidades.ProductosMusk.Producto);
+            // 
+            // DgvTabla
+            // 
+            this.DgvTabla.BackgroundColor = System.Drawing.Color.Teal;
+            this.DgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTabla.Location = new System.Drawing.Point(139, 20);
+            this.DgvTabla.Name = "DgvTabla";
+            this.DgvTabla.Size = new System.Drawing.Size(969, 341);
+            this.DgvTabla.TabIndex = 6;
+            // 
             // VerCombustibleYBateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1116, 374);
-            this.Controls.Add(this.BActualizar);
             this.Controls.Add(this.DgvTabla);
+            this.Controls.Add(this.BActualizar);
             this.Controls.Add(this.GbFiltro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerCombustibleYBateria";
             this.Text = "Ver Combustible y Batería";
             this.Load += new System.EventHandler(this.VerCombustibleYBateria_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvTabla)).EndInit();
             this.GbFiltro.ResumeLayout(false);
             this.GbFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTabla)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,9 +118,10 @@
         #endregion
 
         private System.Windows.Forms.Button BActualizar;
-        private System.Windows.Forms.DataGridView DgvTabla;
         private System.Windows.Forms.GroupBox GbFiltro;
         private System.Windows.Forms.CheckBox CbCombustible;
         private System.Windows.Forms.CheckBox CbBateria;
+        private System.Windows.Forms.BindingSource productoBindingSource;
+        private System.Windows.Forms.DataGridView DgvTabla;
     }
 }

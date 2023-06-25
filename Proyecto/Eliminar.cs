@@ -26,7 +26,7 @@ namespace Proyecto_2_Tema_2
         // Cargamos los datos en el Data grid view
         private void Eliminar_Load(object sender, EventArgs e)
         {
-            DgvTabla.DataSource = Producto.ListaProductos();
+            DgvTabla.DataSource = Tesla.ListaTeslas();
         }
 
         // Eventos que bloquean los ComboBox "Modelo" en base al RadioButton seleccionado
@@ -41,29 +41,58 @@ namespace Proyecto_2_Tema_2
         {
             CbSpaceX.Visible = true;
             CbTesla.Visible = false;
-            DgvTabla.DataSource = SpaceX.ListaSpaceX();                                 // <-------------------------------- Agregar lista SpaceX
+            DgvTabla.DataSource = SpaceX.ListaSpaceX();
         }
 
         // Evento del botón Actualizar
-        // Revisa si la lista de vehículos está vacía: si lo está devuelve error
+        // Primero revisa el estado de los checkbox para entrar al caso correspondiente
+        // Luego, revisa si la lista de vehículos está vacía: si lo está devuelve error - sino actualiza la lista
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             if (RbTesla.Checked)
             {
                 if (Tesla.ListaTeslas().Count == 0)
                 {
-                    MessageBox.Show("La lista de clientes está vacía.", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("La lista de vehículos está vacía.", "Error", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    DgvTabla.DataSource = Tesla.ListaTeslas();
+                    if (TbDuenio.Text != "" && CbTesla.Text != "")
+                    {
+                        foreach (Tesla t in Tesla.ListaTeslas())
+                        {
+                            if (t.Duenio.ToString() == TbDuenio.Text)
+                            {
+                                DgvTabla.DataSource = t;
+                            }
+                        }
+
+                    }
+
+                    else if (TbDuenio.Text != "" || CbTesla.Text != "")
+                    {
+                        foreach (Tesla t in Tesla.ListaTeslas())
+                        {
+                            if (t.Duenio.ToString() == TbDuenio.Text)
+                            {
+                                DgvTabla.DataSource = t;
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        DgvTabla.DataSource = null;
+                        DgvTabla.DataSource = Tesla.ListaTeslas();
+                    }
                 }
             }
+
             else if (RbSpaceX.Checked)
             {
                 if (SpaceX.ListaSpaceX().Count == 0)
                 {
-                    MessageBox.Show("La lista de clientes está vacía.", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("La lista de vehículos está vacía.", "Error", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -72,40 +101,40 @@ namespace Proyecto_2_Tema_2
             }
         }
 
-        // Evento al clickear un botón de la columna eliminar
-        // Elimina el elemento de la lista de teslas.
+        // Evento al hacer click sobre un botón en la columna eliminar
+        // Comienza revisando el estado de los checkbox
+        // Luego revisa si el índice es mayor o igual a 0 para evitar errores
+        // --> Cabe destacar que si el índice no cumple esta condición, el botón Eliminar no genera error pero tampoco hace nada
+        // --> Esto se hizo de esta forma para evitar futuras complicaciones
+        // Finalmente se elimina el vehículo ubicado en la misma fila del botón seleccionado
+        // --> Se elimina tanto de su lista como de la lista general Producto.ListaProductos()
         private void DgvTabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (RbTesla.Checked)
             {
-
-                
-                DataGridViewRow row = DgvTabla.Rows[e.RowIndex];
-
-                try
+                if (e.RowIndex >= 0)
                 {
+                    DataGridViewRow row = DgvTabla.Rows[e.RowIndex];
                     Tesla tesla = (Tesla)row.DataBoundItem;
+                    Producto producto = (Producto)row.DataBoundItem;
                     Tesla.RemoveTesla(tesla);
-                    Producto.RemoveProducto(tesla);
-
+                    Producto.RemoveProducto(producto);
+                    DgvTabla.DataSource = null;
+                    DgvTabla.DataSource = Tesla.ListaTeslas();
                 }
-
-                catch 
+            }
+            else if (RbSpaceX.Checked)
+            {
+                if (e.RowIndex >= 0)
                 {
-                    SpaceX spacex = (SpaceX)row.DataBoundItem;
-                    SpaceX.RemoveSpaceX(spacex);
-
+                    DataGridViewRow row = DgvTabla.Rows[e.RowIndex];
+                    SpaceX spaceX = (SpaceX)row.DataBoundItem;
+                    Producto producto = (Producto)row.DataBoundItem;
+                    SpaceX.RemoveSpaceX(spaceX);
+                    Producto.RemoveProducto( producto);
+                    DgvTabla.DataSource = null;
+                    DgvTabla.DataSource = SpaceX.ListaSpaceX();
                 }
-
-
-                //Tesla tesla = (Tesla)row.DataBoundItem;
-                //SpaceX spacex = (SpaceX)row.DataBoundItem;
-                //Producto producto = (Producto)row.DataBoundItem;
-                //Tesla.RemoveTesla(tesla);
-                //Producto.RemoveProducto(producto);
-                //SpaceX.RemoveSpaceX(spacex);
-                //DgvTabla.DataSource = null;
-                //DgvTabla.DataSource = Tesla.ListaTeslas();
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Proyecto_2_Tema_2.Entidades.ProductosMusk;
+using Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX;
 using Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Proyecto_2_Tema_2
 {
     public partial class VerCombustibleYBateria : Form
     {
+
         public VerCombustibleYBateria()
         {
             InitializeComponent();
@@ -27,29 +29,60 @@ namespace Proyecto_2_Tema_2
 
 
         // Evento del botón actualizar, se muestra una lista modificada en base a los CheckBox seleccionados
+        // Cada vez que se hace click en "Actualizar" el programa hace lo siguiente:
+        // 1. Comprueba el estado de los chechbox
+        // 2. Entra en el condicional que corresponde a dicho caso
+        // 3. Vacia los datos de la tabla
+        // 4. Carga los nuevos datos de la lista que corresponde al caso
+        // 5. Finalmente crea las columnas ID, Año, Autonomía y Cargas Administradas y las vincula a los datos correspondientes.
         private void BActualizar_Click(object sender, EventArgs e)
         {
-            if (CbCombustible.Checked & CbBateria.Checked)
+
+            bool mostrarTeslas = CbBateria.Checked;
+            bool mostrarSpaceX = CbCombustible.Checked;
+
+            if (mostrarTeslas && mostrarSpaceX)
             {
                 DgvTabla.DataSource = null;
                 DgvTabla.DataSource = Producto.ListaProductos();
             }
-            else if (CbBateria.Checked && !CbCombustible.Checked)
+            else if (mostrarTeslas)
             {
                 DgvTabla.DataSource = null;
                 DgvTabla.DataSource = Tesla.ListaTeslas();
             }
-            else if (CbCombustible.Checked && !CbBateria.Checked)
+            else if (mostrarSpaceX)
             {
                 DgvTabla.DataSource = null;
-                //dataGridView1.DataSource = SpaceX.ListaSpaceX
+                DgvTabla.DataSource = SpaceX.ListaSpaceX();
             }
-            else if (!CbBateria.Checked & !CbCombustible.Checked)
+            else if (!mostrarTeslas && !mostrarSpaceX)
             {
                 DgvTabla.DataSource = null;
                 DgvTabla.DataSource = Producto.ListaProductos();
             }
-        }
 
+            //DataGridViewTextBoxColumn columnaId = new DataGridViewTextBoxColumn();
+            //columnaId.HeaderText = "ID";
+            //columnaId.DataPropertyName = "Id";
+
+            //DataGridViewTextBoxColumn columnaAnio = new DataGridViewTextBoxColumn();
+            //columnaAnio.HeaderText = "Año";
+            //columnaAnio.DataPropertyName = "Anio";
+
+            //DataGridViewTextBoxColumn columnaAutonomia = new DataGridViewTextBoxColumn();
+            //columnaAutonomia.HeaderText = "Autonomia";
+            //columnaAutonomia.DataPropertyName = "Autonomia";
+
+            //DataGridViewTextBoxColumn columnaCargas = new DataGridViewTextBoxColumn();
+            //columnaCargas.HeaderText = "Cargas administradas";
+            //columnaCargas.DataPropertyName = "Cargas";
+
+            //DgvTabla.Columns.Add(columnaId);
+            //DgvTabla.Columns.Add(columnaAnio);
+            //DgvTabla.Columns.Add(columnaAutonomia);
+            //DgvTabla.Columns.Add(columnaCargas);
+
+        }
     }
 }

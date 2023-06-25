@@ -94,3 +94,18 @@ C:\Users\Usuario\Desktop\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Pro
 C:\Users\Usuario\Desktop\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.exe
 C:\Users\Usuario\Desktop\GitHub\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.pdb
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\bin\Debug\Proyecto 2 Tema 2.exe.config
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\bin\Debug\Proyecto 2 Tema 2.exe
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\bin\Debug\Proyecto 2 Tema 2.pdb
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.AssemblyReference.cache
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.SuggestedBindingRedirects.cache
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.DarDeAlta.resources
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.Eliminar.resources
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.MainForm.resources
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.MostrarMasNuevo.resources
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.Properties.Resources.resources
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto_2_Tema_2.VerCombustibleYBateria.resources
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.GenerateResource.cache
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.csproj.CoreCompileInputs.cache
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.exe
+E:\franf\Importante\U.N.S & UPSO\Franco\UPSO\2do Año\C# y .NET\Tps y proyectos\Proyecto 2\Soluciones\Ida\tecnicaturaProyectoCSharp\Proyecto\obj\Debug\Proyecto 2 Tema 2.pdb
