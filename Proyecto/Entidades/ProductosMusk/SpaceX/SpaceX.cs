@@ -39,5 +39,53 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
         }
 
         //FALTA SERVICE
+
+        public string RealizarService()
+        {
+            double horasUso = this.UsoActual; // Obtener horasUso actual del Tesla
+
+            double serviceRealizados = Math.Floor(horasUso / this.FrecuenciaService); // Calcular la cantidad de services realizados
+
+            StringBuilder reporteService = new StringBuilder(); // Generar el reporte final de services
+
+            for (int i = 1; i <= serviceRealizados; i++)
+            {
+                int horasService = i * 1000; // Horas del service actual.
+
+                // Agregar escaneos según horasUso del servicio actual
+                if (horasService <= horasUso)
+                {
+                    StringBuilder reporteServiceParcial = new StringBuilder(); // Reporte parcial de cada service
+                    reporteServiceParcial.AppendLine($"Service {i}:");
+
+                    if (horasService % 1000 == 0)
+                    {
+                        reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
+                    }
+
+                    if (horasService % 2000 == 0)
+                    {
+                        reporteServiceParcial.AppendLine("Revisión de batería");
+                    }
+
+                    if (horasService % 2500 == 0)
+                    {
+                        reporteServiceParcial.AppendLine("Revisión de sistema de navegación");
+                    }
+
+                    if (horasService % 3000 == 0)
+                    {
+                        reporteServiceParcial.AppendLine("Revisión de sistema de tracción");
+                        reporteServiceParcial.AppendLine("Revisión de motor");
+                    }
+
+                    reporteService.AppendLine(reporteServiceParcial.ToString());
+                }
+            }
+
+            return reporteService.ToString();
+        }
+
+
     }
 }

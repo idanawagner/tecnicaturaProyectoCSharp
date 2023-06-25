@@ -101,6 +101,9 @@
     <EmbeddedResource Include="Eliminar.resx">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Escanear.resx">
+      <DependentUpon>Escanear.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
