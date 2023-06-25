@@ -29,18 +29,16 @@ namespace Proyecto_2_Tema_2
             DgvTabla.DataSource = Tesla.ListaTeslas();
         }
 
-        // Eventos que bloquean los ComboBox "Modelo" en base al RadioButton seleccionado
+        // Eventos de los Radial Button que modifican qué lista se carga en el Data grid View
         private void RbTesla_CheckedChanged(object sender, EventArgs e)
         {
-            CbTesla.Visible = true;
-            CbSpaceX.Visible = false;
+            DgvTabla.DataSource = null;
             DgvTabla.DataSource = Tesla.ListaTeslas();
         }
 
         private void RbSpaceX_CheckedChanged(object sender, EventArgs e)
         {
-            CbSpaceX.Visible = true;
-            CbTesla.Visible = false;
+            DgvTabla.DataSource = null;
             DgvTabla.DataSource = SpaceX.ListaSpaceX();
         }
 
@@ -49,7 +47,10 @@ namespace Proyecto_2_Tema_2
         // Luego, revisa si la lista de vehículos está vacía: si lo está devuelve error - sino actualiza la lista
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (RbTesla.Checked)
+            bool listaTesla = RbTesla.Checked;
+            bool listaSpaceX = RbSpaceX.Checked;
+
+            if (listaTesla)
             {
                 if (Tesla.ListaTeslas().Count == 0)
                 {
@@ -57,29 +58,19 @@ namespace Proyecto_2_Tema_2
                 }
                 else
                 {
-                    if (TbDuenio.Text != "" && CbTesla.Text != "")
+                    if (TbDuenio.Text != "")
                     {
+                        List<Tesla> nuevaLista = new List<Tesla>();
+
                         foreach (Tesla t in Tesla.ListaTeslas())
                         {
-                            if (t.Duenio.ToString() == TbDuenio.Text)
+                            if (t.Duenio.Nombre.ToString() == TbDuenio.Text)
                             {
-                                DgvTabla.DataSource = t;
+                                nuevaLista.Add(t);
                             }
                         }
-
+                        DgvTabla.DataSource = nuevaLista;
                     }
-
-                    else if (TbDuenio.Text != "" || CbTesla.Text != "")
-                    {
-                        foreach (Tesla t in Tesla.ListaTeslas())
-                        {
-                            if (t.Duenio.ToString() == TbDuenio.Text)
-                            {
-                                DgvTabla.DataSource = t;
-                            }
-                        }
-                    }
-
                     else
                     {
                         DgvTabla.DataSource = null;
@@ -88,7 +79,7 @@ namespace Proyecto_2_Tema_2
                 }
             }
 
-            else if (RbSpaceX.Checked)
+            else if (listaSpaceX)
             {
                 if (SpaceX.ListaSpaceX().Count == 0)
                 {
@@ -96,7 +87,25 @@ namespace Proyecto_2_Tema_2
                 }
                 else
                 {
-                    DgvTabla.DataSource = SpaceX.ListaSpaceX();
+                    if (TbDuenio.Text != "")
+                    {
+                        List<SpaceX> nuevaLista = new List<SpaceX>();
+
+                        foreach (SpaceX s in SpaceX.ListaSpaceX())
+                        {
+                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)                    // <------------- Eto da error T______T
+                            {
+                                nuevaLista.Add(s);
+                            }
+                        }
+                        DgvTabla.DataSource = nuevaLista;
+                    }
+                    else
+                    {
+                        
+                        DgvTabla.DataSource = null;
+                        DgvTabla.DataSource = SpaceX.ListaSpaceX();
+                    }
                 }
             }
         }
