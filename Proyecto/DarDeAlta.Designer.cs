@@ -120,7 +120,7 @@
             "",
             "Starship",
             "Falcon9"});
-            this.cmbModeloSpaceX.Location = new System.Drawing.Point(348, 70);
+            this.cmbModeloSpaceX.Location = new System.Drawing.Point(191, 70);
             this.cmbModeloSpaceX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbModeloSpaceX.Name = "cmbModeloSpaceX";
             this.cmbModeloSpaceX.Size = new System.Drawing.Size(121, 26);
@@ -162,7 +162,7 @@
             this.grpModelo.Name = "grpModelo";
             this.grpModelo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpModelo.Size = new System.Drawing.Size(653, 127);
-            this.grpModelo.TabIndex = 5;
+            this.grpModelo.TabIndex = 0;
             this.grpModelo.TabStop = false;
             this.grpModelo.Text = "Tipo y Modelo de Vehículo";
             // 
@@ -177,7 +177,7 @@
             this.rbtnClienteNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnClienteNuevo.Name = "rbtnClienteNuevo";
             this.rbtnClienteNuevo.Size = new System.Drawing.Size(121, 22);
-            this.rbtnClienteNuevo.TabIndex = 6;
+            this.rbtnClienteNuevo.TabIndex = 3;
             this.rbtnClienteNuevo.TabStop = true;
             this.rbtnClienteNuevo.Text = "Cliente Nuevo";
             this.rbtnClienteNuevo.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             this.rbtnClienteExistente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnClienteExistente.Name = "rbtnClienteExistente";
             this.rbtnClienteExistente.Size = new System.Drawing.Size(138, 22);
-            this.rbtnClienteExistente.TabIndex = 7;
+            this.rbtnClienteExistente.TabIndex = 4;
             this.rbtnClienteExistente.TabStop = true;
             this.rbtnClienteExistente.Text = "Cliente Existente";
             this.rbtnClienteExistente.UseVisualStyleBackColor = true;
@@ -218,14 +218,15 @@
             // 
             // btnCrearPersona
             // 
+            this.btnCrearPersona.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCrearPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearPersona.Location = new System.Drawing.Point(477, 56);
+            this.btnCrearPersona.Location = new System.Drawing.Point(457, 59);
             this.btnCrearPersona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrearPersona.Name = "btnCrearPersona";
-            this.btnCrearPersona.Size = new System.Drawing.Size(155, 31);
-            this.btnCrearPersona.TabIndex = 4;
+            this.btnCrearPersona.Size = new System.Drawing.Size(175, 32);
+            this.btnCrearPersona.TabIndex = 7;
             this.btnCrearPersona.Text = "Crear Cliente";
-            this.btnCrearPersona.UseVisualStyleBackColor = true;
+            this.btnCrearPersona.UseVisualStyleBackColor = false;
             this.btnCrearPersona.Click += new System.EventHandler(this.btnCrearPersona_Click);
             // 
             // lblNombre
@@ -245,7 +246,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(187, 24);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 5;
             // 
             // lblID
             // 
@@ -253,7 +254,7 @@
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(271, 33);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(19, 15);
+            this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 1;
             this.lblID.Text = "Id ";
             // 
@@ -269,7 +270,7 @@
             0});
             this.numericId.Name = "numericId";
             this.numericId.Size = new System.Drawing.Size(177, 24);
-            this.numericId.TabIndex = 0;
+            this.numericId.TabIndex = 6;
             // 
             // grpDatosVehiculo
             // 
@@ -302,9 +303,9 @@
             this.panelNot0Km.Controls.Add(this.numericAutonomiaActual);
             this.panelNot0Km.Controls.Add(this.lblCargas);
             this.panelNot0Km.Controls.Add(this.lblAutonomiaActual);
-            this.panelNot0Km.Location = new System.Drawing.Point(24, 126);
+            this.panelNot0Km.Location = new System.Drawing.Point(12, 88);
             this.panelNot0Km.Name = "panelNot0Km";
-            this.panelNot0Km.Size = new System.Drawing.Size(405, 187);
+            this.panelNot0Km.Size = new System.Drawing.Size(457, 164);
             this.panelNot0Km.TabIndex = 15;
             this.panelNot0Km.Visible = false;
             // 
@@ -312,7 +313,7 @@
             // 
             this.lblKilometrajeActual.AutoSize = true;
             this.lblKilometrajeActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKilometrajeActual.Location = new System.Drawing.Point(9, 116);
+            this.lblKilometrajeActual.Location = new System.Drawing.Point(9, 87);
             this.lblKilometrajeActual.Name = "lblKilometrajeActual";
             this.lblKilometrajeActual.Size = new System.Drawing.Size(126, 18);
             this.lblKilometrajeActual.TabIndex = 4;
@@ -321,7 +322,7 @@
             // numericAnio
             // 
             this.numericAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericAnio.Location = new System.Drawing.Point(12, 77);
+            this.numericAnio.Location = new System.Drawing.Point(12, 48);
             this.numericAnio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericAnio.Maximum = new decimal(new int[] {
             2023,
@@ -335,7 +336,7 @@
             0});
             this.numericAnio.Name = "numericAnio";
             this.numericAnio.Size = new System.Drawing.Size(120, 24);
-            this.numericAnio.TabIndex = 2;
+            this.numericAnio.TabIndex = 12;
             this.numericAnio.Value = new decimal(new int[] {
             2020,
             0,
@@ -346,7 +347,7 @@
             // 
             this.lblAnio.AutoSize = true;
             this.lblAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnio.Location = new System.Drawing.Point(9, 43);
+            this.lblAnio.Location = new System.Drawing.Point(9, 14);
             this.lblAnio.Name = "lblAnio";
             this.lblAnio.Size = new System.Drawing.Size(229, 18);
             this.lblAnio.TabIndex = 3;
@@ -356,7 +357,7 @@
             // 
             this.numericUsoActual.DecimalPlaces = 1;
             this.numericUsoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUsoActual.Location = new System.Drawing.Point(16, 146);
+            this.numericUsoActual.Location = new System.Drawing.Point(16, 117);
             this.numericUsoActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUsoActual.Maximum = new decimal(new int[] {
             2000000,
@@ -365,12 +366,12 @@
             0});
             this.numericUsoActual.Name = "numericUsoActual";
             this.numericUsoActual.Size = new System.Drawing.Size(120, 24);
-            this.numericUsoActual.TabIndex = 5;
+            this.numericUsoActual.TabIndex = 14;
             // 
             // numericCargasRealizadas
             // 
             this.numericCargasRealizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericCargasRealizadas.Location = new System.Drawing.Point(261, 146);
+            this.numericCargasRealizadas.Location = new System.Drawing.Point(294, 117);
             this.numericCargasRealizadas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericCargasRealizadas.Maximum = new decimal(new int[] {
             10000,
@@ -379,13 +380,13 @@
             0});
             this.numericCargasRealizadas.Name = "numericCargasRealizadas";
             this.numericCargasRealizadas.Size = new System.Drawing.Size(123, 24);
-            this.numericCargasRealizadas.TabIndex = 11;
+            this.numericCargasRealizadas.TabIndex = 15;
             // 
             // numericAutonomiaActual
             // 
             this.numericAutonomiaActual.DecimalPlaces = 1;
             this.numericAutonomiaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericAutonomiaActual.Location = new System.Drawing.Point(264, 77);
+            this.numericAutonomiaActual.Location = new System.Drawing.Point(297, 48);
             this.numericAutonomiaActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericAutonomiaActual.Maximum = new decimal(new int[] {
             2000,
@@ -394,13 +395,13 @@
             0});
             this.numericAutonomiaActual.Name = "numericAutonomiaActual";
             this.numericAutonomiaActual.Size = new System.Drawing.Size(120, 24);
-            this.numericAutonomiaActual.TabIndex = 9;
+            this.numericAutonomiaActual.TabIndex = 13;
             // 
             // lblCargas
             // 
             this.lblCargas.AutoSize = true;
             this.lblCargas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargas.Location = new System.Drawing.Point(261, 116);
+            this.lblCargas.Location = new System.Drawing.Point(294, 87);
             this.lblCargas.Name = "lblCargas";
             this.lblCargas.Size = new System.Drawing.Size(127, 18);
             this.lblCargas.TabIndex = 10;
@@ -410,7 +411,7 @@
             // 
             this.lblAutonomiaActual.AutoSize = true;
             this.lblAutonomiaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutonomiaActual.Location = new System.Drawing.Point(261, 43);
+            this.lblAutonomiaActual.Location = new System.Drawing.Point(294, 14);
             this.lblAutonomiaActual.Name = "lblAutonomiaActual";
             this.lblAutonomiaActual.Size = new System.Drawing.Size(123, 18);
             this.lblAutonomiaActual.TabIndex = 8;
@@ -421,10 +422,10 @@
             this.chk0km.AutoSize = true;
             this.chk0km.Checked = true;
             this.chk0km.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk0km.Location = new System.Drawing.Point(392, 97);
+            this.chk0km.Location = new System.Drawing.Point(488, 59);
             this.chk0km.Name = "chk0km";
             this.chk0km.Size = new System.Drawing.Size(144, 22);
-            this.chk0km.TabIndex = 14;
+            this.chk0km.TabIndex = 11;
             this.chk0km.Text = "Vehiculo nuevo";
             this.chk0km.UseVisualStyleBackColor = true;
             this.chk0km.CheckedChanged += new System.EventHandler(this.chk0km_CheckedChanged);
@@ -432,11 +433,11 @@
             // cmbDuenioSpaceX
             // 
             this.cmbDuenioSpaceX.FormattingEnabled = true;
-            this.cmbDuenioSpaceX.Location = new System.Drawing.Point(310, 57);
+            this.cmbDuenioSpaceX.Location = new System.Drawing.Point(24, 57);
             this.cmbDuenioSpaceX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDuenioSpaceX.Name = "cmbDuenioSpaceX";
-            this.cmbDuenioSpaceX.Size = new System.Drawing.Size(251, 26);
-            this.cmbDuenioSpaceX.TabIndex = 13;
+            this.cmbDuenioSpaceX.Size = new System.Drawing.Size(270, 26);
+            this.cmbDuenioSpaceX.TabIndex = 9;
             this.cmbDuenioSpaceX.Visible = false;
             // 
             // btnAltaVehiculo
@@ -447,7 +448,7 @@
             this.btnAltaVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAltaVehiculo.Name = "btnAltaVehiculo";
             this.btnAltaVehiculo.Size = new System.Drawing.Size(175, 32);
-            this.btnAltaVehiculo.TabIndex = 12;
+            this.btnAltaVehiculo.TabIndex = 16;
             this.btnAltaVehiculo.Text = "Dar de Alta";
             this.btnAltaVehiculo.UseVisualStyleBackColor = false;
             this.btnAltaVehiculo.Click += new System.EventHandler(this.btnAltaVehiculo_Click);
@@ -456,7 +457,7 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.Location = new System.Drawing.Point(33, 97);
+            this.lblColor.Location = new System.Drawing.Point(305, 25);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(45, 18);
             this.lblColor.TabIndex = 7;
@@ -473,11 +474,11 @@
             "Gris",
             "Rojo",
             "Azul"});
-            this.cmbColor.Location = new System.Drawing.Point(84, 95);
+            this.cmbColor.Location = new System.Drawing.Point(308, 57);
             this.cmbColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbColor.Name = "cmbColor";
             this.cmbColor.Size = new System.Drawing.Size(121, 26);
-            this.cmbColor.TabIndex = 6;
+            this.cmbColor.TabIndex = 10;
             this.cmbColor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbColorTesla_Validating);
             // 
             // lblSeleccionarCliente
@@ -493,11 +494,11 @@
             // cmbDuenioTesla
             // 
             this.cmbDuenioTesla.FormattingEnabled = true;
-            this.cmbDuenioTesla.Location = new System.Drawing.Point(36, 57);
+            this.cmbDuenioTesla.Location = new System.Drawing.Point(25, 57);
             this.cmbDuenioTesla.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDuenioTesla.Name = "cmbDuenioTesla";
-            this.cmbDuenioTesla.Size = new System.Drawing.Size(251, 26);
-            this.cmbDuenioTesla.TabIndex = 0;
+            this.cmbDuenioTesla.Size = new System.Drawing.Size(269, 26);
+            this.cmbDuenioTesla.TabIndex = 8;
             this.cmbDuenioTesla.Visible = false;
             // 
             // errorProviderCmbColorTesla
@@ -520,7 +521,7 @@
             this.groupBox1.Location = new System.Drawing.Point(24, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(902, 726);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // DarDeAlta

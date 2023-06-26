@@ -20,7 +20,6 @@ namespace Proyecto_2_Tema_2
         {
             InitializeComponent();
         }
-
         private void cmbTipoVehiculo_Validating(object sender, CancelEventArgs e)
         {
             ComboBox modelo = (ComboBox)sender;
@@ -48,7 +47,6 @@ namespace Proyecto_2_Tema_2
                 errorProviderCmbTipo.SetError(modelo, null); // Limpiar el mensaje de error
             }
         }
-
         private void cmbTipoVehiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Cada vez que el usuario interactua con cmbTipoVehiculo se limpian las opciones que puedan generar inconsistencias al momento de llamar al constructor
@@ -68,6 +66,13 @@ namespace Proyecto_2_Tema_2
             cmbDuenioSpaceX.DataSource = null;
             cmbDuenioSpaceX.Visible=false;
             cmbColor.SelectedIndex = 0;
+            chk0km.Checked = true;
+            numericAnio.Value = 2023;
+            numericUsoActual.Value = 0;
+            numericAutonomiaActual.Value = 0;
+            numericCargasRealizadas.Value = 0;
+
+
 
 
             ComboBox modelo = (ComboBox)sender;
@@ -82,7 +87,7 @@ namespace Proyecto_2_Tema_2
                 cmbModeloTesla.Visible = true;
                 cmbModeloSpaceX.Visible = false;
                 cmbModeloSpaceX.SelectedIndex = 0;
-                lblID.Text = "CUIL";
+                
                 
 
 
@@ -96,7 +101,6 @@ namespace Proyecto_2_Tema_2
                 cmbModeloSpaceX.Visible = true;
                 cmbModeloTesla.Visible = false;
                 cmbModeloTesla.SelectedIndex = 0;
-                lblID.Text = "CUIT";
                 lblKilometrajeActual.Text = "Horas de vuelo actuales";
 
                 //grpDatosVehiculo.Visible = true;
@@ -105,6 +109,12 @@ namespace Proyecto_2_Tema_2
         private void cmbModeloTesla_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbColor.SelectedIndex = 0;
+            chk0km.Checked = true;
+            numericAnio.Value = 2023;
+            numericUsoActual.Value = 0;
+            numericAutonomiaActual.Value = 0;
+            numericCargasRealizadas.Value = 0;
+
             if (cmbModeloTesla.SelectedIndex != 0)
             {
                 rbtnClienteNuevo.Visible = true;
@@ -133,6 +143,12 @@ namespace Proyecto_2_Tema_2
         private void cmbModeloSpaceX_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbColor.SelectedIndex = 0;
+            chk0km.Checked = true;
+            numericAnio.Value = 2023;
+            numericUsoActual.Value = 0;
+            numericAutonomiaActual.Value = 0;
+            numericCargasRealizadas.Value = 0;
+
             if (cmbModeloSpaceX.SelectedIndex != 0)
             {
                 rbtnClienteNuevo.Visible = true;
@@ -169,7 +185,6 @@ namespace Proyecto_2_Tema_2
 
             }
         }
-
         private void btnCrearPersona_Click(object sender, EventArgs e)
         {
             
@@ -202,7 +217,7 @@ namespace Proyecto_2_Tema_2
                     cmbDuenioTesla.Format += (s, args) =>
                     {
                         PersonaFisica personaFisicaLista = (PersonaFisica)args.ListItem;
-                        args.Value = $"CUIL: {personaFisicaLista.Id} - Nombre: {personaFisicaLista.Nombre}";
+                        args.Value = $"ID: {personaFisicaLista.Id} - Nombre: {personaFisicaLista.Nombre}";
                     };
                     grpDatosVehiculo.Visible = true;
                     cmbDuenioTesla.Visible  = true;
@@ -211,7 +226,7 @@ namespace Proyecto_2_Tema_2
                 else
                 {
                     // El ID no es único, se muestra un mensaje de error al usuario
-                    MessageBox.Show("El CUIL ya existe. Debe ser único.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El ID ya existe. Debe ser único.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     grpDatosVehiculo.Visible = false;
                 }
             }
@@ -223,7 +238,7 @@ namespace Proyecto_2_Tema_2
                     PersonaJuridica persona = new PersonaJuridica(nombrePersona, idPersona);
 
                     // Se muestra los datos para corroboran se haya creado exitosamente
-                    MessageBox.Show(persona.ToString(), "Nuevo cliente creado", MessageBoxButtons.OK);
+                    MessageBox.Show(persona.ToString(), "Nueva empresa creada", MessageBoxButtons.OK);
                     grpModelo.Visible = true;
                     // Obtén la lista de personas físicas
                     List<PersonaJuridica> personasJuridicas = PersonaJuridica.ListaPersonasJuridicas();
@@ -239,7 +254,7 @@ namespace Proyecto_2_Tema_2
                     cmbDuenioSpaceX.Format += (s, args) =>
                     {
                         PersonaJuridica personaJuridicaLista = (PersonaJuridica)args.ListItem;
-                        args.Value = $"CUIT: {personaJuridicaLista.Id} - Nombre: {personaJuridicaLista.Nombre}";
+                        args.Value = $"ID: {personaJuridicaLista.Id} - Nombre: {personaJuridicaLista.Nombre}";
                     };
                     grpDatosVehiculo.Visible = true;
                     cmbDuenioSpaceX.Visible  = true;
@@ -248,14 +263,13 @@ namespace Proyecto_2_Tema_2
                 else
                 {
                     // El ID no es único, se muestra un mensaje de error al usuario
-                    MessageBox.Show("El CUIT ya existe. Debe ser único.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El ID ya existe. Debe ser único.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     grpDatosVehiculo.Visible = false;
                 }
             }
 
 
         }
-
         private void rbtnClienteExistente_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnClienteExistente.Checked == true && cmbTipoVehiculo.SelectedIndex == 1)
@@ -323,7 +337,6 @@ namespace Proyecto_2_Tema_2
               
         
         }
-
         private void cmbColorTesla_Validating(object sender, CancelEventArgs e)
         {
             ComboBox color = (ComboBox)sender;
@@ -345,7 +358,6 @@ namespace Proyecto_2_Tema_2
 
             }
         }
-
         private void chk0km_CheckedChanged(object sender, EventArgs e)
         {
             if (chk0km.Checked)
@@ -363,9 +375,9 @@ namespace Proyecto_2_Tema_2
                 cmbColor.Visible = true;
             }
         }
-
         private void btnAltaVehiculo_Click(object sender, EventArgs e)
         {
+            
             int anio;
             double usoActual;
             string color;
@@ -373,6 +385,14 @@ namespace Proyecto_2_Tema_2
             int cargas;
             PersonaFisica duenioTesla;
             PersonaJuridica duenioSpaceX;
+
+            if (cmbColor.SelectedIndex == 0)
+            {
+                cmbColor.Focus();
+                MessageBox.Show("¡Debes seleccionar un color!", "Color inválido", MessageBoxButtons.OK);
+                return;
+            }
+            
 
             switch (cmbTipoVehiculo.SelectedItem)
             {
@@ -392,7 +412,7 @@ namespace Proyecto_2_Tema_2
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
                             ModeloX nuevoModeloX = new ModeloX(anio,usoActual,color,autonomiaActual,cargas,duenioTesla);
-                            MessageBox.Show("Exito!", "Nuevo ModeloX creado", MessageBoxButtons.OK);
+                            MessageBox.Show( "Nuevo ModeloX creado", "Exito!", MessageBoxButtons.OK);
 
                             break;
 
@@ -406,7 +426,7 @@ namespace Proyecto_2_Tema_2
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
                             ModeloS nuevoModeloS = new ModeloS(anio, usoActual, color, autonomiaActual, cargas, duenioTesla);
-                            MessageBox.Show("Exito!", "Nuevo ModeloS creado", MessageBoxButtons.OK);
+                            MessageBox.Show( "Nuevo ModeloS creado", "Exito!", MessageBoxButtons.OK);
 
                             break;
 
@@ -419,7 +439,7 @@ namespace Proyecto_2_Tema_2
                             duenioTesla = (PersonaFisica)cmbDuenioTesla.SelectedItem;
 
                             Cybertruck nuevoCybertruckS = new Cybertruck(anio, usoActual, color, autonomiaActual, cargas, duenioTesla);
-                            MessageBox.Show("Exito!", "Nuevo Cybertruck creado", MessageBoxButtons.OK);
+                            MessageBox.Show("Nuevo Cybertruck creado", "Exito!", MessageBoxButtons.OK);
 
                             break;                           
                     }
@@ -437,7 +457,7 @@ namespace Proyecto_2_Tema_2
                             duenioSpaceX = (PersonaJuridica)cmbDuenioSpaceX.SelectedItem;
 
                             Starship nuevoStarship = new Starship(anio, usoActual, color, autonomiaActual, cargas, duenioSpaceX);
-                            MessageBox.Show("Exito!", "Nuevo Starship creado", MessageBoxButtons.OK);
+                            MessageBox.Show("Nuevo Starship creado", "Exito!", MessageBoxButtons.OK);
 
 
                             break;
@@ -450,7 +470,7 @@ namespace Proyecto_2_Tema_2
                             duenioSpaceX = (PersonaJuridica)cmbDuenioSpaceX.SelectedItem;
 
                             Falcon9 nuevoFalcon9 = new Falcon9(anio, usoActual, color, autonomiaActual, cargas, duenioSpaceX);
-                            MessageBox.Show("Exito!", "Nuevo Falcon9 creado", MessageBoxButtons.OK);
+                            MessageBox.Show("Nuevo Falcon9 creado", "Exito!", MessageBoxButtons.OK);
                             break;
                     }
 
@@ -460,32 +480,5 @@ namespace Proyecto_2_Tema_2
             }
         }
 
-
-        //HABLAR CON LOS CHICOS!!!!
-        //HABLAR CON LOS CHICOS!!!!
-        //HABLAR CON LOS CHICOS!!!!
-        //HABLAR CON LOS CHICOS!!!!
-        //HABLAR CON LOS CHICOS!!!!
-        //HABLAR CON LOS CHICOS!!!!
-        //HABLAR CON LOS CHICOS!!!!
-
-
-        // Dos cosas: Validacion de CUIT/CUIL y las funciones que estan abajo
-
-        private void numericAutonomiaActual_ValueChanged(object sender, EventArgs e)
-        {
-            //if (numericAutonomiaActual.Value > numericAutonomiaActual.Maximum)
-            //{
-            //    MessageBox.Show($"La autonomia maxima para el modelo es {numericAutonomiaActual.Maximum}. \n Si ingresas un valor mayor, se pondra por defecto el valor maximo.", "Autonomia mayor a la capacidad del vehiculo", MessageBoxButtons.OK);
-            //}
-        }
-
-        private void numericAutonomiaActual_Validating(object sender, CancelEventArgs e)
-        {
-            //if (numericAutonomiaActual.Value > numericAutonomiaActual.Maximum)
-            //{
-            //    MessageBox.Show($"La autonomia maxima para el modelo es {numericAutonomiaActual.Maximum}. \n Si ingresas un valor mayor, se pondra por defecto el valor maximo.","Autonomia mayor a la capacidad del vehiculo",MessageBoxButtons.OK);
-            //}
-        }
     }
 }

@@ -49,10 +49,10 @@ namespace Proyecto_2_Tema_2.Entidades.Duenios.TiposDePersonas
 
         }
 
-        public override string ToString()
-        {
-            return $"CUIL: {this.Id} - Nombre: {this.Nombre}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"CUIL: {this.Id} - Nombre: {this.Nombre}";
+        //}
 
     }
 }
