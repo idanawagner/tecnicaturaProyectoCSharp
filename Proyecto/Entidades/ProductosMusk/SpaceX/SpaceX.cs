@@ -22,6 +22,8 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
             contador++;
             _duenio = duenio;
 
+            duenio.Comprar(this);
+
 
             // agregamos el nuevo SpaceX a la lista SpaceX
             _listaSpaceX.Add(this);
@@ -38,49 +40,46 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
             _listaSpaceX.Remove(nave);
         }
 
-        //FALTA SERVICE
+   
 
         public string RealizarService()
         {
-            double horasUso = this.UsoActual; // Obtener horasUso actual del Tesla
+            double kilometraje = this.UsoActual; // Obtener el kilometraje actual del Tesla
 
-            double serviceRealizados = Math.Floor(horasUso / this.FrecuenciaService); // Calcular la cantidad de services realizados
+            double serviceRealizados = Math.Floor(kilometraje / this.FrecuenciaService); // Calcular la cantidad de services realizados
+
+            double frecuenciaPropulsion = 1000;
+            double frecuenciaNavegacion = 500;            
 
             StringBuilder reporteService = new StringBuilder(); // Generar el reporte final de services
 
             for (int i = 1; i <= serviceRealizados; i++)
             {
-                int horasService = i * 1000; // Horas del service actual.
+                int horasUsoService = i * (int)this.FrecuenciaService; // Kilometraje del service actual.
 
-                // Agregar escaneos según horasUso del servicio actual
-                if (horasService <= horasUso)
+
+                StringBuilder reporteServiceParcial = new StringBuilder(); // Reporte parcial de cada service
+                reporteServiceParcial.AppendLine($"Service {i}:");
+
+                if (horasUsoService >= frecuenciaPropulsion)
                 {
-                    StringBuilder reporteServiceParcial = new StringBuilder(); // Reporte parcial de cada service
-                    reporteServiceParcial.AppendLine($"Service {i}:");
-
-                    if (horasService % 1000 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
-                    }
-
-                    if (horasService % 2000 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de batería");
-                    }
-
-                    if (horasService % 2500 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de sistema de navegación");
-                    }
-
-                    if (horasService % 3000 == 0)
-                    {
-                        reporteServiceParcial.AppendLine("Revisión de sistema de tracción");
-                        reporteServiceParcial.AppendLine("Revisión de motor");
-                    }
-
-                    reporteService.AppendLine(reporteServiceParcial.ToString());
+                    reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
+                    frecuenciaPropulsion+= 1000;
                 }
+
+                if (horasUsoService >= frecuenciaNavegacion)
+                {
+                    reporteServiceParcial.AppendLine("Revisión de sistema de navegación");
+                    frecuenciaNavegacion += 500;
+                }
+
+                if (reporteServiceParcial.Length < 20)
+                {
+                    reporteServiceParcial.AppendLine("No corresponden chequeos.");
+                }
+  
+                reporteService.AppendLine(reporteServiceParcial.ToString());
+
             }
 
             return reporteService.ToString();
