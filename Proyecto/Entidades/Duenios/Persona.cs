@@ -20,6 +20,11 @@ namespace Proyecto_2_Tema_2.Entidades.Duenios
         public string Nombre { get => _nombre; set => _nombre=value; }
         public int Id { get => _id; }
 
+        public override string ToString()
+        {
+            return $"ID: {this.Id} - Nombre: {this.Nombre}";
+        }
+
 
     }
 }

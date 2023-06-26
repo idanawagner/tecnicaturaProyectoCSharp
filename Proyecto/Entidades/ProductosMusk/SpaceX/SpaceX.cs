@@ -63,7 +63,7 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
 
                 if (horasUsoService >= frecuenciaPropulsion)
                 {
-                    reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
+                    reporteServiceParcial.AppendLine("Revisión de sistema de propulsion");
                     frecuenciaPropulsion+= 1000;
                 }
 
