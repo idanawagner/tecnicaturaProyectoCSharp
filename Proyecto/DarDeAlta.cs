@@ -434,7 +434,7 @@ namespace Proyecto_2_Tema_2
                             color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
-                            duenioSpaceX = (PersonaJuridica)cmbDuenioTesla.SelectedItem;
+                            duenioSpaceX = (PersonaJuridica)cmbDuenioSpaceX.SelectedItem;
 
                             Starship nuevoStarship = new Starship(anio, usoActual, color, autonomiaActual, cargas, duenioSpaceX);
                             MessageBox.Show("Exito!", "Nuevo Starship creado", MessageBoxButtons.OK);
@@ -447,7 +447,7 @@ namespace Proyecto_2_Tema_2
                             color = (string)cmbColor.Text;
                             autonomiaActual = (double)numericAutonomiaActual.Value;
                             cargas = (int)numericCargasRealizadas.Value;
-                            duenioSpaceX = (PersonaJuridica)cmbDuenioTesla.SelectedItem;
+                            duenioSpaceX = (PersonaJuridica)cmbDuenioSpaceX.SelectedItem;
 
                             Falcon9 nuevoFalcon9 = new Falcon9(anio, usoActual, color, autonomiaActual, cargas, duenioSpaceX);
                             MessageBox.Show("Exito!", "Nuevo Falcon9 creado", MessageBoxButtons.OK);

@@ -52,6 +52,12 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas
 
             double serviceRealizados = Math.Floor(kilometraje / this.FrecuenciaService); // Calcular la cantidad de services realizados
 
+            double frecuenciaCinturones = 1000;
+            double frecuenciaBateria = 2000;
+            double frecuenciaNavegacion = 2500;
+            //double frecuenciaMotor = 3000;
+            double frecuenciaTraccionMotor = 3000;
+
             StringBuilder reporteService = new StringBuilder(); // Generar el reporte final de services
 
             for (int i = 1; i <= serviceRealizados; i++)
@@ -62,25 +68,30 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.Teslas
                 StringBuilder reporteServiceParcial = new StringBuilder(); // Reporte parcial de cada service
                 reporteServiceParcial.AppendLine($"Service {i}:");
 
-                if (kilometrajeService % 1000 == 0)
+                if (kilometrajeService >= frecuenciaCinturones)
                 {
                     reporteServiceParcial.AppendLine("Revisión de cinturones de seguridad");
+                    frecuenciaCinturones+= 1000;
                 }
 
-                if (kilometrajeService % 2000 == 0 )
+                if (kilometrajeService >= frecuenciaBateria)
                 {
                     reporteServiceParcial.AppendLine("Revisión de batería");
+                    frecuenciaBateria += 2000;
                 }
 
-                if (kilometrajeService % 2500 == 0)
+                if (kilometrajeService >= frecuenciaNavegacion)
                 {
                     reporteServiceParcial.AppendLine("Revisión de sistema de navegación");
+                    frecuenciaNavegacion += 2500;
                 }
 
-                if (kilometrajeService % 3000 == 0 )
+                if (kilometrajeService >= frecuenciaTraccionMotor )
                 {
                     reporteServiceParcial.AppendLine("Revisión de sistema de tracción");
                     reporteServiceParcial.AppendLine("Revisión de motor");
+                    frecuenciaTraccionMotor += 3000;
+
                 }
 
                 reporteService.AppendLine(reporteServiceParcial.ToString());
