@@ -93,7 +93,7 @@ namespace Proyecto_2_Tema_2
 
                         foreach (SpaceX s in SpaceX.ListaSpaceX())
                         {
-                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)                    // <------------- Eto da error T______T
+                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)
                             {
                                 nuevaLista.Add(s);
                             }

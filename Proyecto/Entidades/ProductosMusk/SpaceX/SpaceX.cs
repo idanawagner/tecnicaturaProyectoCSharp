@@ -22,6 +22,7 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
             contador++;
             _duenio = duenio;
 
+            duenio.Comprar(this);
 
             // agregamos el nuevo SpaceX a la lista SpaceX
             _listaSpaceX.Add(this);
