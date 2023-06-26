@@ -34,7 +34,6 @@ namespace Proyecto_2_Tema_2
         // 2. Entra en el condicional que corresponde a dicho caso
         // 3. Vacia los datos de la tabla
         // 4. Carga los nuevos datos de la lista que corresponde al caso
-        // 5. Finalmente crea las columnas ID, Año, Autonomía y Cargas Administradas y las vincula a los datos correspondientes.
         private void BActualizar_Click(object sender, EventArgs e)
         {
 
@@ -61,28 +60,6 @@ namespace Proyecto_2_Tema_2
                 DgvTabla.DataSource = null;
                 DgvTabla.DataSource = Producto.ListaProductos();
             }
-
-            //DataGridViewTextBoxColumn columnaId = new DataGridViewTextBoxColumn();
-            //columnaId.HeaderText = "ID";
-            //columnaId.DataPropertyName = "Id";
-
-            //DataGridViewTextBoxColumn columnaAnio = new DataGridViewTextBoxColumn();
-            //columnaAnio.HeaderText = "Año";
-            //columnaAnio.DataPropertyName = "Anio";
-
-            //DataGridViewTextBoxColumn columnaAutonomia = new DataGridViewTextBoxColumn();
-            //columnaAutonomia.HeaderText = "Autonomia";
-            //columnaAutonomia.DataPropertyName = "Autonomia";
-
-            //DataGridViewTextBoxColumn columnaCargas = new DataGridViewTextBoxColumn();
-            //columnaCargas.HeaderText = "Cargas administradas";
-            //columnaCargas.DataPropertyName = "Cargas";
-
-            //DgvTabla.Columns.Add(columnaId);
-            //DgvTabla.Columns.Add(columnaAnio);
-            //DgvTabla.Columns.Add(columnaAutonomia);
-            //DgvTabla.Columns.Add(columnaCargas);
-
         }
     }
 }

@@ -43,8 +43,10 @@ namespace Proyecto_2_Tema_2
         }
 
         // Evento del botón Actualizar
-        // Primero revisa el estado de los checkbox para entrar al caso correspondiente
-        // Luego, revisa si la lista de vehículos está vacía: si lo está devuelve error - sino actualiza la lista
+        // Primero revisa el estado de los Radio Button, ya que en base a lo seleccionado es la lista a la que se va a acceder
+        // Luego revisa que dicha lista no esté vacía, y si lo está devuelve un mensaje de error
+        // Si la lista no está vacía entonces consulta si hay algo escrito en TbDuenio (Textbox "Nombre de dueño")
+        // Si hay texto entonces devuelve una lista filtrada basandose en el Dueño, si no hay texto, devuelve la lista completa de Teslas o SpaceX
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             bool listaTesla = RbTesla.Checked;
@@ -93,7 +95,7 @@ namespace Proyecto_2_Tema_2
 
                         foreach (SpaceX s in SpaceX.ListaSpaceX())
                         {
-                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)                    // <------------- Eto da error T______T
+                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)
                             {
                                 nuevaLista.Add(s);
                             }

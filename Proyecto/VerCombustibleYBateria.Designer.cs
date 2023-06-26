@@ -81,10 +81,6 @@
             this.CbBateria.Text = "Batería";
             this.CbBateria.UseVisualStyleBackColor = true;
             // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataSource = typeof(Proyecto_2_Tema_2.Entidades.ProductosMusk.Producto);
-            // 
             // DgvTabla
             // 
             this.DgvTabla.BackgroundColor = System.Drawing.Color.Teal;
