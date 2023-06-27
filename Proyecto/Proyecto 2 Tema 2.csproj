@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DarDeAlta.cs">
+    <Compile Include="Formularios\DarDeAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DarDeAlta.Designer.cs">
+    <Compile Include="Formularios\DarDeAlta.Designer.cs">
       <DependentUpon>DarDeAlta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Eliminar.cs">
+    <Compile Include="Formularios\Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Eliminar.Designer.cs">
+    <Compile Include="Formularios\Eliminar.Designer.cs">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Duenios\Persona.cs" />
@@ -69,45 +69,45 @@
     <Compile Include="Entidades\ProductosMusk\Teslas\Modelos\ModeloS.cs" />
     <Compile Include="Entidades\ProductosMusk\Teslas\Modelos\ModeloX.cs" />
     <Compile Include="Entidades\ProductosMusk\Teslas\Tesla.cs" />
-    <Compile Include="Escanear.cs">
+    <Compile Include="Formularios\Escanear.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Escanear.Designer.cs">
+    <Compile Include="Formularios\Escanear.Designer.cs">
       <DependentUpon>Escanear.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Formularios\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Formularios\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MostrarMasNuevo.cs">
+    <Compile Include="Formularios\MostrarMasNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MostrarMasNuevo.Designer.cs">
+    <Compile Include="Formularios\MostrarMasNuevo.Designer.cs">
       <DependentUpon>MostrarMasNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VerCombustibleYBateria.cs">
+    <Compile Include="Formularios\VerCombustibleYBateria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerCombustibleYBateria.Designer.cs">
+    <Compile Include="Formularios\VerCombustibleYBateria.Designer.cs">
       <DependentUpon>VerCombustibleYBateria.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DarDeAlta.resx">
+    <EmbeddedResource Include="Formularios\DarDeAlta.resx">
       <DependentUpon>DarDeAlta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar.resx">
+    <EmbeddedResource Include="Formularios\Eliminar.resx">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Escanear.resx">
+    <EmbeddedResource Include="Formularios\Escanear.resx">
       <DependentUpon>Escanear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Formularios\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MostrarMasNuevo.resx">
+    <EmbeddedResource Include="Formularios\MostrarMasNuevo.resx">
       <DependentUpon>MostrarMasNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -119,7 +119,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VerCombustibleYBateria.resx">
+    <EmbeddedResource Include="Formularios\VerCombustibleYBateria.resx">
       <DependentUpon>VerCombustibleYBateria.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

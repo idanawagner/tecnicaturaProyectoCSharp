@@ -88,6 +88,11 @@ namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX
 
             double serviceRealizados = Math.Floor(horasDeVueloActual / this.FrecuenciaService); // Calcular la cantidad de services realizados
 
+            if (serviceRealizados <= 0)
+            {
+                return $"No corresponde ningun service. El vehiculo tiene menos de {this.FrecuenciaService} kilometros";
+            }
+
             double frecuenciaPropulsion = 1000; // horas de vuelos a las que se debe hacer el primer control del sistema de propulsion
             double frecuenciaNavegacion = 500; // horas de vuelos a las que se debe hacer el primer control del sistema de navegacion         
 
