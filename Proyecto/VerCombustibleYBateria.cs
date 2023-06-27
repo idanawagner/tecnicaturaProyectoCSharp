@@ -33,8 +33,8 @@ namespace Proyecto_2_Tema_2
         // 1. Comprueba el estado de los chechbox
         // 2. Entra en el condicional que corresponde a dicho caso
         // 3. Vacia los datos de la tabla
-        // 4. Carga los nuevos datos de la lista que corresponde al caso
-        // 5. Finalmente crea las columnas ID, Año, Autonomía y Cargas Administradas y las vincula a los datos correspondientes.
+        // 4. Carga los nuevos datos de la lista que corresponde al caso.
+
         private void BActualizar_Click(object sender, EventArgs e)
         {
 
