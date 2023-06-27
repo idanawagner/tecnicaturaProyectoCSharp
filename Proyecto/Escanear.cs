@@ -72,6 +72,16 @@ namespace Proyecto_2_Tema_2
                 List<Tesla> listaTeslas =Tesla.ListaTeslas();
                 cmbTeslas.DataSource = listaTeslas;
 
+                if (listaTeslas.Count == 0)
+                {
+                    MessageBox.Show("No hay Teslas cargados", "Lista vacia", MessageBoxButtons.OK);
+                    btnEscanear.Enabled = false;
+                }
+                else
+                {
+                    btnEscanear.Enabled = true;
+                }
+
 
 
             }
@@ -83,7 +93,17 @@ namespace Proyecto_2_Tema_2
                 List<SpaceX> listaSpacex = SpaceX.ListaSpaceX();
                 cmbSpaceX.DataSource = listaSpacex;
 
-                
+                if (listaSpacex.Count == 0)
+                {
+                    MessageBox.Show("No hay SpaceX cargados", "Lista vacia", MessageBoxButtons.OK);
+                    btnEscanear.Enabled = false;
+                }
+                else
+                {
+                    btnEscanear.Enabled = true;
+                }
+
+
             }
         }
 
@@ -91,21 +111,22 @@ namespace Proyecto_2_Tema_2
         {
             if(cmbTipoDeVehiculo.SelectedIndex == 1)
             {
+                
                 object TeslaSeleccionado = cmbTeslas.SelectedItem;
                 
                 if (TeslaSeleccionado is ModeloX modeloXSeleccionado)
                 {
-                    string resultadoEscaneo = modeloXSeleccionado.RealizarService();
+                    string resultadoEscaneo = modeloXSeleccionado.RealizarEscaneo();
                     txtResultadoEscaneo.Text = resultadoEscaneo;
                 }
                 else if (TeslaSeleccionado is ModeloS modeloSSeleccionado)
                 {
-                    string resultadoEscaneo = modeloSSeleccionado.RealizarService();
+                    string resultadoEscaneo = modeloSSeleccionado.RealizarEscaneo();
                     txtResultadoEscaneo.Text = resultadoEscaneo;
                 }
                 else if (TeslaSeleccionado is Cybertruck CybertruckSeleccionado)
                 {
-                    string resultadoEscaneo = CybertruckSeleccionado.RealizarService();
+                    string resultadoEscaneo = CybertruckSeleccionado.RealizarEscaneo();
                     txtResultadoEscaneo.Text = resultadoEscaneo;
                 }
             }

@@ -21,6 +21,9 @@ namespace Proyecto_2_Tema_2
             InitializeComponent();
         }
 
+        
+
+
         // Evento que carga los datos al data grid view
         private void VerCombustibleYBateria_Load(object sender, EventArgs e)
         {
