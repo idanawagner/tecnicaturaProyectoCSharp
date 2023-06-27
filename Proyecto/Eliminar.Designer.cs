@@ -180,6 +180,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Eliminar";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Eliminar";
             this.Load += new System.EventHandler(this.Eliminar_Load);
             this.GbFiltro.ResumeLayout(false);
