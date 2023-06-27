@@ -7,6 +7,21 @@ using System.Threading.Tasks;
 
 namespace Proyecto_2_Tema_2.Entidades.ProductosMusk.SpaceX.Modelos
 {
+    /// <summary>
+    /// En esta clase se hereda de la clase abstracta SpaceX todo lo descripto en dicho archivo. Se adicionan un valores predeterminados para algunos atributos especificos. Ellos son:
+    /// Autonomia = 500
+    /// Frecuencia Service = 1000
+
+    /// Se implementa un constructor que asigne los argumentos pasados a las propiedades de la clase. Este constructor contempla en su sintaxis la herencia de la clase SpaceX.
+    /// 
+    /// Se establecen los Getters y los Setters de cada atributo.
+    /// 
+    /// Se sobreescribe el método ToString().
+    /// 
+    /// Se sugiere continuar la lectura en Entidades/Duenios/Persona.cs (si aún no se leyó)
+    /// 
+    /// 
+    /// </summary>
     public class Starship : SpaceX
     {
         public Starship(int anio, double usoActual, string color, double autonomiaActual, int cargas, PersonaJuridica duenio, double autonomia = 500, double frecuenciaService = 1000)
