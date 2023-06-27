@@ -33,12 +33,14 @@ namespace Proyecto_2_Tema_2
         private void RbTesla_CheckedChanged(object sender, EventArgs e)
         {
             DgvTabla.DataSource = null;
+            DgvTabla.Rows.Clear();
             DgvTabla.DataSource = Tesla.ListaTeslas();
         }
 
         private void RbSpaceX_CheckedChanged(object sender, EventArgs e)
         {
             DgvTabla.DataSource = null;
+            DgvTabla.Rows.Clear();
             DgvTabla.DataSource = SpaceX.ListaSpaceX();
         }
 
@@ -74,6 +76,7 @@ namespace Proyecto_2_Tema_2
                     else
                     {
                         DgvTabla.DataSource = null;
+                        DgvTabla.Rows.Clear();
                         DgvTabla.DataSource = Tesla.ListaTeslas();
                     }
                 }
@@ -93,7 +96,7 @@ namespace Proyecto_2_Tema_2
 
                         foreach (SpaceX s in SpaceX.ListaSpaceX())
                         {
-                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)                    // <------------- Eto da error T______T
+                            if (s.Duenio.Nombre.ToString() == TbDuenio.Text)
                             {
                                 nuevaLista.Add(s);
                             }
@@ -104,6 +107,7 @@ namespace Proyecto_2_Tema_2
                     {
                         
                         DgvTabla.DataSource = null;
+                        DgvTabla.Rows.Clear();
                         DgvTabla.DataSource = SpaceX.ListaSpaceX();
                     }
                 }
@@ -119,6 +123,7 @@ namespace Proyecto_2_Tema_2
         // --> Se elimina tanto de su lista como de la lista general Producto.ListaProductos()
         private void DgvTabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (RbTesla.Checked)
             {
                 if (e.RowIndex >= 0)
@@ -129,6 +134,7 @@ namespace Proyecto_2_Tema_2
                     Tesla.RemoveTesla(tesla);
                     Producto.RemoveProducto(producto);
                     DgvTabla.DataSource = null;
+                    DgvTabla.Rows.Clear();
                     DgvTabla.DataSource = Tesla.ListaTeslas();
                 }
             }
@@ -140,8 +146,9 @@ namespace Proyecto_2_Tema_2
                     SpaceX spaceX = (SpaceX)row.DataBoundItem;
                     Producto producto = (Producto)row.DataBoundItem;
                     SpaceX.RemoveSpaceX(spaceX);
-                    Producto.RemoveProducto( producto);
+                    Producto.RemoveProducto(producto);
                     DgvTabla.DataSource = null;
+                    DgvTabla.Rows.Clear();
                     DgvTabla.DataSource = SpaceX.ListaSpaceX();
                 }
             }
